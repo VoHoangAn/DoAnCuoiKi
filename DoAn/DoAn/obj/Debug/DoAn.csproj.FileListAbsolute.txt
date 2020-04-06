@@ -1,0 +1,11 @@
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.csprojAssemblyReference.cache
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.LoginForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.MainForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.Properties.Resources.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\bin\Debug\DoAn.exe.config
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\bin\Debug\DoAn.exe
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\bin\Debug\DoAn.pdb
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.exe
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.pdb
