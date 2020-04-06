@@ -16,5 +16,11 @@ namespace DoAn
         {
             InitializeComponent();
         }
+
+        private void themNhanVienToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNhanVienForm add = new AddNhanVienForm();
+            add.Show();
+        }
     }
 }

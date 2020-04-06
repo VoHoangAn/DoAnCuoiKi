@@ -18,8 +18,12 @@ namespace DoAn
             Application.SetCompatibleTextRenderingDefault(false);
        //     Application.Run(new LoginForm());
             LoginForm flogin = new LoginForm();
-            if (flogin.ShowDialog() == DialogResult.OK)
+            if (flogin.ShowDialog() == DialogResult.OK && flogin.ten == "Quan Li")
             { Application.Run(new MainForm()); }
+            else if(flogin.ShowDialog() == DialogResult.OK && flogin.ten == "Tiep Tan")
+            { Application.Run(new TiepTanForm()); }
+            else if(flogin.ShowDialog() == DialogResult.OK && flogin.ten == "Lao Cong")
+            { Application.Run(new LaoCongForm()); }
             else
             { Application.Exit(); }
         }
