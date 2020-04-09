@@ -22,5 +22,11 @@ namespace DoAn
             AddNhanVienForm add = new AddNhanVienForm();
             add.Show();
         }
+
+        private void danhSachNhanVienToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteNhanVienForm up = new UpdateDeleteNhanVienForm();
+            up.Show();
+        }
     }
 }

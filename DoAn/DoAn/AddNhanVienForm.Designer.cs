@@ -56,7 +56,7 @@
             "Quan Li",
             "Tiep Tan",
             "Lao Cong"});
-            this.cvComboBox.Location = new System.Drawing.Point(126, 191);
+            this.cvComboBox.Location = new System.Drawing.Point(116, 168);
             this.cvComboBox.Name = "cvComboBox";
             this.cvComboBox.Size = new System.Drawing.Size(227, 24);
             this.cvComboBox.TabIndex = 14;
@@ -65,9 +65,9 @@
             // 
             this.cancelButton.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cancelButton.Location = new System.Drawing.Point(101, 340);
+            this.cancelButton.Location = new System.Drawing.Point(29, 515);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(193, 58);
+            this.cancelButton.Size = new System.Drawing.Size(142, 58);
             this.cancelButton.TabIndex = 0;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
@@ -77,9 +77,9 @@
             // 
             this.addButton.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.addButton.Location = new System.Drawing.Point(388, 340);
+            this.addButton.Location = new System.Drawing.Point(233, 515);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(186, 58);
+            this.addButton.Size = new System.Drawing.Size(143, 58);
             this.addButton.TabIndex = 1;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = false;
@@ -89,7 +89,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(55, 50);
+            this.label1.Location = new System.Drawing.Point(50, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 20);
             this.label1.TabIndex = 2;
@@ -99,7 +99,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(51, 84);
+            this.label2.Location = new System.Drawing.Point(45, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 3;
@@ -109,7 +109,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(44, 119);
+            this.label3.Location = new System.Drawing.Point(34, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 4;
@@ -119,7 +119,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(35, 155);
+            this.label4.Location = new System.Drawing.Point(25, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 20);
             this.label4.TabIndex = 5;
@@ -129,7 +129,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(55, 230);
+            this.label5.Location = new System.Drawing.Point(45, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 20);
             this.label5.TabIndex = 6;
@@ -139,7 +139,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(47, 191);
+            this.label6.Location = new System.Drawing.Point(37, 168);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 7;
@@ -147,14 +147,14 @@
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(126, 48);
+            this.idTextBox.Location = new System.Drawing.Point(116, 25);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(227, 22);
             this.idTextBox.TabIndex = 9;
             // 
             // tenTextBox
             // 
-            this.tenTextBox.Location = new System.Drawing.Point(126, 84);
+            this.tenTextBox.Location = new System.Drawing.Point(116, 61);
             this.tenTextBox.Name = "tenTextBox";
             this.tenTextBox.Size = new System.Drawing.Size(227, 22);
             this.tenTextBox.TabIndex = 10;
@@ -163,7 +163,7 @@
             // 
             this.namButton.AutoSize = true;
             this.namButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.namButton.Location = new System.Drawing.Point(126, 119);
+            this.namButton.Location = new System.Drawing.Point(116, 96);
             this.namButton.Name = "namButton";
             this.namButton.Size = new System.Drawing.Size(65, 24);
             this.namButton.TabIndex = 11;
@@ -175,7 +175,7 @@
             // 
             this.nuButton.AutoSize = true;
             this.nuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.nuButton.Location = new System.Drawing.Point(243, 119);
+            this.nuButton.Location = new System.Drawing.Point(233, 96);
             this.nuButton.Name = "nuButton";
             this.nuButton.Size = new System.Drawing.Size(51, 24);
             this.nuButton.TabIndex = 12;
@@ -185,14 +185,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(126, 155);
+            this.dateTimePicker1.Location = new System.Drawing.Point(116, 132);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(227, 22);
             this.dateTimePicker1.TabIndex = 13;
             // 
             // dcTextBox
             // 
-            this.dcTextBox.Location = new System.Drawing.Point(126, 230);
+            this.dcTextBox.Location = new System.Drawing.Point(116, 207);
             this.dcTextBox.Multiline = true;
             this.dcTextBox.Name = "dcTextBox";
             this.dcTextBox.Size = new System.Drawing.Size(227, 72);
@@ -201,18 +201,18 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pictureBox1.Location = new System.Drawing.Point(399, 84);
+            this.pictureBox1.Location = new System.Drawing.Point(116, 285);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 165);
+            this.pictureBox1.Size = new System.Drawing.Size(227, 165);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
             // uploadButton
             // 
             this.uploadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.uploadButton.Location = new System.Drawing.Point(399, 247);
+            this.uploadButton.Location = new System.Drawing.Point(116, 447);
             this.uploadButton.Name = "uploadButton";
-            this.uploadButton.Size = new System.Drawing.Size(206, 38);
+            this.uploadButton.Size = new System.Drawing.Size(227, 38);
             this.uploadButton.TabIndex = 17;
             this.uploadButton.Text = "Upload";
             this.uploadButton.UseVisualStyleBackColor = true;
@@ -222,7 +222,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(399, 48);
+            this.label7.Location = new System.Drawing.Point(32, 285);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 20);
             this.label7.TabIndex = 18;
@@ -233,7 +233,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.ClientSize = new System.Drawing.Size(666, 450);
+            this.ClientSize = new System.Drawing.Size(402, 604);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.uploadButton);
             this.Controls.Add(this.pictureBox1);

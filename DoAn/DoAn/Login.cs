@@ -15,7 +15,8 @@ namespace DoAn
     public partial class LoginForm : Form
     {
         My_DB db = new My_DB();
-        public string ten = "Quan Li";
+        public string cv;
+        public Form cvForm = new Form();
         public LoginForm()
         {
             InitializeComponent();
@@ -30,21 +31,25 @@ namespace DoAn
             command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = passwordTextBox.Text;
             adapter.SelectCommand = command;
             adapter.Fill(table);
-            string a = "Quan Li";
-            if(tieptanButton.Checked)
-            {
-                ten = "Tiep Tan";
-            }
-            if(laocongButton.Checked)
-            {
-                ten = "Lao Cong";
-            }
             if ((table.Rows.Count > 0))
             {
-                int userid = Convert.ToInt16(table.Rows[0][0].ToString());
-                Globals.SetID(userid);
-                if (CheckChucVu(ten))
+                string a = "Quan Li";
+                cvForm = new MainForm();
+                if(tieptanButton.Checked)
                 {
+                    a = "Tiep tan";
+                    cvForm = new TiepTanForm();
+                }
+                if(laocongButton.Checked)
+                {
+                    a = "Lao Cong";
+                    cvForm = new LaoCongForm();
+                }
+                int userid = Convert.ToInt16(table.Rows[0]["ID"].ToString());
+                Globals.SetID(userid);
+                if (CheckChucVu(a))
+                {
+                    cv = a;
                     this.DialogResult = DialogResult.OK;
                 }
                 else
@@ -82,6 +87,9 @@ namespace DoAn
             
         }
 
-
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            quanliButton.Checked = true;
+        }
     }
 }
