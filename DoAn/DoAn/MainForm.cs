@@ -28,5 +28,11 @@ namespace DoAn
             UpdateDeleteNhanVienForm up = new UpdateDeleteNhanVienForm();
             up.Show();
         }
+
+        private void QuanLiNhanVien_Click(object sender, EventArgs e)
+        {
+            QuanLiNhanVienForm qlnv = new QuanLiNhanVienForm();
+            qlnv.Show();
+        }
     }
 }

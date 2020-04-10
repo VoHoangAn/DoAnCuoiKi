@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoAnCuoiKiDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="LaoCongForm.cs">
       <SubType>Form</SubType>
@@ -75,6 +80,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="QuanLiNhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiNhanVienForm.Designer.cs">
+      <DependentUpon>QuanLiNhanVienForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TiepTanForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,9 +116,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QuanLiNhanVienForm.resx">
+      <DependentUpon>QuanLiNhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateDeleteNhanVienForm.resx">
       <DependentUpon>UpdateDeleteNhanVienForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DoAnCuoiKiDataSet.xsc">
+      <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoAnCuoiKiDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoAnCuoiKiDataSet.xss">
+      <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
