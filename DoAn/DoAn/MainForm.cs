@@ -16,5 +16,23 @@ namespace DoAn
         {
             InitializeComponent();
         }
+
+        private void themNhanVienToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNhanVienForm add = new AddNhanVienForm();
+            add.Show();
+        }
+
+        private void danhSachNhanVienToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteNhanVienForm up = new UpdateDeleteNhanVienForm();
+            up.Show();
+        }
+
+        private void QuanLiNhanVien_Click(object sender, EventArgs e)
+        {
+            QuanLiNhanVienForm qlnv = new QuanLiNhanVienForm();
+            qlnv.Show();
+        }
     }
 }
