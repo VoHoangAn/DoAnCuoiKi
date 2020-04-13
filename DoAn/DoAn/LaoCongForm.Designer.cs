@@ -53,14 +53,14 @@
             this.btnCheckOut.UseVisualStyleBackColor = true;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
-            // LaoCong
+            // LaoCongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 151);
+            this.ClientSize = new System.Drawing.Size(287, 151);
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnCheckIn);
-            this.Name = "LaoCong";
+            this.Name = "LaoCongForm";
             this.Text = "LaoCong";
             this.ResumeLayout(false);
 

@@ -32,7 +32,6 @@ namespace DoAn
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
-
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             btnCheckIn.Enabled = true;
