@@ -16,7 +16,9 @@ namespace DoAn
         {
             InitializeComponent();
         }
-
+        NhanVien nv = new NhanVien();
+        DateTime d1 = new DateTime();
+        DateTime d2 = new DateTime();
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
             //test form ở program.cs
@@ -30,7 +32,7 @@ namespace DoAn
             string checkInTime = DateTime.Now.ToShortTimeString();
             MessageBox.Show(checkInTime, "Check in time",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            d1 = DateTime.Now;
         }
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
@@ -39,7 +41,8 @@ namespace DoAn
             string checkOutTime = DateTime.Now.ToShortTimeString();
             MessageBox.Show(checkOutTime, "Check out time",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            d2 = DateTime.Now;
+            nv.UpdateLog(Globals.ID, d1, d2);
         }
     }
 }
