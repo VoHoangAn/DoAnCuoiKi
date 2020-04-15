@@ -20,13 +20,14 @@ namespace DoAn
             adp.Fill(table);
             return table;
         }
-        public bool InsertNhanVien(int MaNV, string HoTen, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, MemoryStream pic)
+        public bool InsertNhanVien(int MaNV, string HoTen, string GioiTinh, DateTime NSinh, string DChi, string ChucVu,int LuongCB, MemoryStream pic)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO NhanVien(MaNV,HoTen,GioiTinh,NgaySinh,DChi,ChucVu,Anh)" + "VALUES(@id,@ten,@gt,@ns,@dc,@cv,@pic)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO NhanVien(MaNV,HoTen,GioiTinh,NgaySinh,DChi,ChucVu,LuongCB,Anh)" + "VALUES(@id,@ten,@gt,@ns,@dc,@cv,@lcb,@pic)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = MaNV;
             cmd.Parameters.Add("@ten", SqlDbType.VarChar).Value = HoTen;
             cmd.Parameters.Add("@gt", SqlDbType.VarChar).Value = GioiTinh;
             cmd.Parameters.Add("@ns", SqlDbType.DateTime).Value = NSinh;
+            cmd.Parameters.Add("lcb", SqlDbType.Int).Value = LuongCB;
             cmd.Parameters.Add("@dc", SqlDbType.VarChar).Value = DChi;
             cmd.Parameters.Add("@cv", SqlDbType.VarChar).Value = ChucVu;
             cmd.Parameters.Add("@pic", SqlDbType.Image).Value = pic.ToArray();
@@ -85,12 +86,13 @@ namespace DoAn
             }
 
         }
-        public bool UpdateLog(int MaNV, DateTime d1, DateTime d2)
+        public bool UpdateLog(int MaNV, DateTime d2)
         {
-
+            DateTime d1 = Globals.dtlogin;
             SqlCommand cmd = new SqlCommand("SELECT * FROM NhanVien WHERE MaNV = " + MaNV, mydb.getConnection);
             DataTable tab = getNhanVien(cmd);
             TimeSpan a = d2 - d1;
+            Globals.setLuongNgay(a.TotalHours * Convert.ToDouble(tab.Rows[0]["LuongCB"]));
             SqlCommand cmd2 = new SqlCommand("INSERT INTO Log(MaNV,HoTen,Ngay,Checkin,Checkout,ThoiGianLam,Them,Thieu)" + "VALUES(@manv,@ten,@ngay,@in,@out,@tg,@them,@thieu)", mydb.getConnection);
             cmd2.Parameters.Add("@manv", SqlDbType.Int).Value = MaNV;
             cmd2.Parameters.Add("@ten", SqlDbType.VarChar).Value = tab.Rows[0]["HoTen"].ToString();
@@ -114,6 +116,8 @@ namespace DoAn
                 cmd2.Parameters.Add("@them", SqlDbType.Int).Value = 0;
                 cmd2.Parameters.Add("@thieu", SqlDbType.Int).Value = 0;
             }
+            SqlCommand cmd3 = new SqlCommand("UPDATE NhanVien SET LuongThang-@lt WHERE MaNv = @id");
+            cmd3.Parameters.Add("@lt", SqlDbType.Int).Value = Convert.ToInt32(tab.Rows[0]["LuongThang"]) + Globals.LuongNgay;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1 || cmd2.ExecuteNonQuery() == 1)
             {
@@ -127,5 +131,25 @@ namespace DoAn
             }
 
         }
+
+        public bool UpdateBangPhanCong(int MaPc,int id,string HoTen)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE BangPhanCong SET ID = @id, HoTen = @HoTen WHERE MaPhanCong = " + MaPc, mydb.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@HoTen", SqlDbType.VarChar).Value = HoTen;
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+
+        }
+
     }
 }

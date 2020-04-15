@@ -32,7 +32,6 @@ namespace DoAn
             string checkInTime = DateTime.Now.ToShortTimeString();
             MessageBox.Show(checkInTime, "Check in time",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-            d1 = DateTime.Now;
         }
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
@@ -42,7 +41,7 @@ namespace DoAn
             MessageBox.Show(checkOutTime, "Check out time",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             d2 = DateTime.Now;
-            nv.UpdateLog(Globals.ID, d1, d2);
+            nv.UpdateLog(Globals.ID, d2);
         }
     }
 }

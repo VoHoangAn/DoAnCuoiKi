@@ -51,6 +51,7 @@
             // 
             // cvComboBox
             // 
+            this.cvComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cvComboBox.FormattingEnabled = true;
             this.cvComboBox.Items.AddRange(new object[] {
             "Quan Li",

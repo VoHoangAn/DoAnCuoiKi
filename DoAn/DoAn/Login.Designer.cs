@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.quanliButton = new System.Windows.Forms.RadioButton();
             this.tieptanButton = new System.Windows.Forms.RadioButton();
-            this.laocongButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // cancelButton
@@ -96,7 +95,7 @@
             // quanliButton
             // 
             this.quanliButton.AutoSize = true;
-            this.quanliButton.Location = new System.Drawing.Point(47, 19);
+            this.quanliButton.Location = new System.Drawing.Point(94, 19);
             this.quanliButton.Name = "quanliButton";
             this.quanliButton.Size = new System.Drawing.Size(79, 21);
             this.quanliButton.TabIndex = 6;
@@ -107,24 +106,13 @@
             // tieptanButton
             // 
             this.tieptanButton.AutoSize = true;
-            this.tieptanButton.Location = new System.Drawing.Point(172, 19);
+            this.tieptanButton.Location = new System.Drawing.Point(255, 19);
             this.tieptanButton.Name = "tieptanButton";
             this.tieptanButton.Size = new System.Drawing.Size(86, 21);
             this.tieptanButton.TabIndex = 7;
             this.tieptanButton.TabStop = true;
             this.tieptanButton.Text = "Tiep Tan";
             this.tieptanButton.UseVisualStyleBackColor = true;
-            // 
-            // laocongButton
-            // 
-            this.laocongButton.AutoSize = true;
-            this.laocongButton.Location = new System.Drawing.Point(297, 19);
-            this.laocongButton.Name = "laocongButton";
-            this.laocongButton.Size = new System.Drawing.Size(90, 21);
-            this.laocongButton.TabIndex = 8;
-            this.laocongButton.TabStop = true;
-            this.laocongButton.Text = "Lao Cong";
-            this.laocongButton.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
@@ -133,7 +121,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(439, 215);
-            this.Controls.Add(this.laocongButton);
             this.Controls.Add(this.tieptanButton);
             this.Controls.Add(this.quanliButton);
             this.Controls.Add(this.label2);
@@ -160,7 +147,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton quanliButton;
         private System.Windows.Forms.RadioButton tieptanButton;
-        private System.Windows.Forms.RadioButton laocongButton;
     }
 }
 

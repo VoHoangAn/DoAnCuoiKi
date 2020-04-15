@@ -30,14 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaySinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chucVuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.luongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anhDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doAnCuoiKiDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doAnCuoiKiDataSet = new DoAn.DoAnCuoiKiDataSet();
@@ -67,6 +59,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.nuButton = new System.Windows.Forms.RadioButton();
             this.namButton = new System.Windows.Forms.RadioButton();
+            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaySinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chucVuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.luongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anhDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetBindingSource)).BeginInit();
@@ -97,70 +97,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            // 
-            // maNVDataGridViewTextBoxColumn
-            // 
-            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
-            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
-            this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
-            this.maNVDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // hoTenDataGridViewTextBoxColumn
-            // 
-            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.HeaderText = "Ho Ten";
-            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
-            this.hoTenDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // gioiTinhDataGridViewTextBoxColumn
-            // 
-            this.gioiTinhDataGridViewTextBoxColumn.DataPropertyName = "GioiTinh";
-            this.gioiTinhDataGridViewTextBoxColumn.HeaderText = "Gioi Tinh";
-            this.gioiTinhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gioiTinhDataGridViewTextBoxColumn.Name = "gioiTinhDataGridViewTextBoxColumn";
-            this.gioiTinhDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // ngaySinhDataGridViewTextBoxColumn
-            // 
-            this.ngaySinhDataGridViewTextBoxColumn.DataPropertyName = "NgaySinh";
-            this.ngaySinhDataGridViewTextBoxColumn.HeaderText = "Ngay Sinh";
-            this.ngaySinhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ngaySinhDataGridViewTextBoxColumn.Name = "ngaySinhDataGridViewTextBoxColumn";
-            this.ngaySinhDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // dChiDataGridViewTextBoxColumn
-            // 
-            this.dChiDataGridViewTextBoxColumn.DataPropertyName = "DChi";
-            this.dChiDataGridViewTextBoxColumn.HeaderText = "Dia Chi";
-            this.dChiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dChiDataGridViewTextBoxColumn.Name = "dChiDataGridViewTextBoxColumn";
-            this.dChiDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // chucVuDataGridViewTextBoxColumn
-            // 
-            this.chucVuDataGridViewTextBoxColumn.DataPropertyName = "ChucVu";
-            this.chucVuDataGridViewTextBoxColumn.HeaderText = "Chuc Vu";
-            this.chucVuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.chucVuDataGridViewTextBoxColumn.Name = "chucVuDataGridViewTextBoxColumn";
-            this.chucVuDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // luongDataGridViewTextBoxColumn
-            // 
-            this.luongDataGridViewTextBoxColumn.DataPropertyName = "Luong";
-            this.luongDataGridViewTextBoxColumn.HeaderText = "Luong";
-            this.luongDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.luongDataGridViewTextBoxColumn.Name = "luongDataGridViewTextBoxColumn";
-            this.luongDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // anhDataGridViewImageColumn
-            // 
-            this.anhDataGridViewImageColumn.DataPropertyName = "Anh";
-            this.anhDataGridViewImageColumn.HeaderText = "Anh";
-            this.anhDataGridViewImageColumn.MinimumWidth = 6;
-            this.anhDataGridViewImageColumn.Name = "anhDataGridViewImageColumn";
-            this.anhDataGridViewImageColumn.Width = 80;
             // 
             // nhanVienBindingSource
             // 
@@ -445,6 +381,70 @@
             this.namButton.Text = "Nam";
             this.namButton.UseVisualStyleBackColor = true;
             // 
+            // maNVDataGridViewTextBoxColumn
+            // 
+            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
+            this.maNVDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // hoTenDataGridViewTextBoxColumn
+            // 
+            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
+            this.hoTenDataGridViewTextBoxColumn.HeaderText = "Ho Ten";
+            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
+            this.hoTenDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // gioiTinhDataGridViewTextBoxColumn
+            // 
+            this.gioiTinhDataGridViewTextBoxColumn.DataPropertyName = "GioiTinh";
+            this.gioiTinhDataGridViewTextBoxColumn.HeaderText = "Gioi Tinh";
+            this.gioiTinhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gioiTinhDataGridViewTextBoxColumn.Name = "gioiTinhDataGridViewTextBoxColumn";
+            this.gioiTinhDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // ngaySinhDataGridViewTextBoxColumn
+            // 
+            this.ngaySinhDataGridViewTextBoxColumn.DataPropertyName = "NgaySinh";
+            this.ngaySinhDataGridViewTextBoxColumn.HeaderText = "Ngay Sinh";
+            this.ngaySinhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngaySinhDataGridViewTextBoxColumn.Name = "ngaySinhDataGridViewTextBoxColumn";
+            this.ngaySinhDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // dChiDataGridViewTextBoxColumn
+            // 
+            this.dChiDataGridViewTextBoxColumn.DataPropertyName = "DChi";
+            this.dChiDataGridViewTextBoxColumn.HeaderText = "Dia Chi";
+            this.dChiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dChiDataGridViewTextBoxColumn.Name = "dChiDataGridViewTextBoxColumn";
+            this.dChiDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // chucVuDataGridViewTextBoxColumn
+            // 
+            this.chucVuDataGridViewTextBoxColumn.DataPropertyName = "ChucVu";
+            this.chucVuDataGridViewTextBoxColumn.HeaderText = "Chuc Vu";
+            this.chucVuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.chucVuDataGridViewTextBoxColumn.Name = "chucVuDataGridViewTextBoxColumn";
+            this.chucVuDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // luongDataGridViewTextBoxColumn
+            // 
+            this.luongDataGridViewTextBoxColumn.DataPropertyName = "Luong";
+            this.luongDataGridViewTextBoxColumn.HeaderText = "Luong";
+            this.luongDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.luongDataGridViewTextBoxColumn.Name = "luongDataGridViewTextBoxColumn";
+            this.luongDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // anhDataGridViewImageColumn
+            // 
+            this.anhDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.anhDataGridViewImageColumn.DataPropertyName = "Anh";
+            this.anhDataGridViewImageColumn.HeaderText = "Anh";
+            this.anhDataGridViewImageColumn.MinimumWidth = 6;
+            this.anhDataGridViewImageColumn.Name = "anhDataGridViewImageColumn";
+            // 
             // QuanLiNhanVienForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -497,14 +497,6 @@
         private DoAnCuoiKiDataSet doAnCuoiKiDataSet;
         private System.Windows.Forms.BindingSource nhanVienBindingSource;
         private DoAnCuoiKiDataSetTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinhDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinhDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dChiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chucVuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn luongDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn anhDataGridViewImageColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -530,5 +522,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton nuButton;
         private System.Windows.Forms.RadioButton namButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dChiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chucVuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn luongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn anhDataGridViewImageColumn;
     }
 }

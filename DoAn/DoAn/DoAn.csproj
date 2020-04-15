@@ -62,11 +62,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DoAnCuoiKiDataSet21.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="LaoCongForm.cs">
       <SubType>Form</SubType>
@@ -101,6 +96,12 @@
     </Compile>
     <Compile Include="QuanLiNhanVienForm.Designer.cs">
       <DependentUpon>QuanLiNhanVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThayDoiNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThayDoiNhanVien.Designer.cs">
+      <DependentUpon>ThayDoiNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="TiepTanForm.cs">
       <SubType>Form</SubType>
@@ -141,6 +142,12 @@
     <EmbeddedResource Include="QuanLiNhanVienForm.resx">
       <DependentUpon>QuanLiNhanVienForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThayDoiNhanVien.resx">
+      <DependentUpon>ThayDoiNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiepTanForm.resx">
+      <DependentUpon>TiepTanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateDeleteNhanVienForm.resx">
       <DependentUpon>UpdateDeleteNhanVienForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,17 +172,6 @@
     </None>
     <None Include="DoAnCuoiKiDataSet1.xss">
       <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DoAnCuoiKiDataSet21.xsc">
-      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
-    </None>
-    <None Include="DoAnCuoiKiDataSet21.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DoAnCuoiKiDataSet21.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DoAnCuoiKiDataSet21.xss">
-      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

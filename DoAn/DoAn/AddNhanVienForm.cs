@@ -47,6 +47,15 @@ namespace DoAn
             MemoryStream pic = new MemoryStream();
             int year = dateTimePicker1.Value.Year;
             int now = DateTime.Now.Year;
+            int Luongcb = 0;
+            if (cvComboBox.Text == "Tiep Tan")
+            { 
+                Luongcb = 120;
+            }
+            if(cvComboBox.Text == "Lao Cong")
+            {
+                Luongcb = 60;
+            }
             if (now - year < 20 || now-year >100)
             {
                 MessageBox.Show("Tuoi khong hop le", "Them Nhan Vien", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -60,7 +69,7 @@ namespace DoAn
                     else
                     {
                         pictureBox1.Image.Save(pic, pictureBox1.Image.RawFormat);
-                        if (nv.InsertNhanVien(id,ten,gt,ns,dc,cv, pic))
+                        if (nv.InsertNhanVien(id,ten,gt,ns,dc,cv,Luongcb, pic))
                         {
                             MessageBox.Show("Them nhan vien thanh cong", "Them Nhan Vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }

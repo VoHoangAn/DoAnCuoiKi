@@ -24,6 +24,7 @@ namespace DoAn
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Globals.setdtLogin(DateTime.Now);
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
             SqlCommand command = new SqlCommand("SELECT * FROM login WHERE username = @User AND password = @Pass", db.getConnection);
@@ -39,11 +40,6 @@ namespace DoAn
                 {
                     a = "Tiep tan";
                     cvForm = new TiepTanForm();
-                }
-                if(laocongButton.Checked)
-                {
-                    a = "Lao Cong";
-                    cvForm = new LaoCongForm();
                 }
                 int userid = Convert.ToInt16(table.Rows[0]["ID"].ToString());
                 Globals.SetID(userid);

@@ -14,4 +14,5 @@ C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.Upda
 C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.QuanLiNhanVienForm.resources
 C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.LaoCongForm.resources
 C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.BangPhanCong.resources
-C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.ChinhSuaCaLamForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.TiepTanForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.ThayDoiNhanVien.resources
