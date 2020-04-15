@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.doAnCuoiKiDataSet = new DoAn.DoAnCuoiKiDataSet();
-            this.doAnCuoiKiDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nhanVienTableAdapter = new DoAn.DoAnCuoiKiDataSetTableAdapters.NhanVienTableAdapter();
             this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioiTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +38,10 @@
             this.chucVuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.luongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anhDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doAnCuoiKiDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doAnCuoiKiDataSet = new DoAn.DoAnCuoiKiDataSet();
+            this.nhanVienTableAdapter = new DoAn.DoAnCuoiKiDataSetTableAdapters.NhanVienTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,12 +65,12 @@
             this.editButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.namButton = new System.Windows.Forms.RadioButton();
             this.nuButton = new System.Windows.Forms.RadioButton();
+            this.namButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -95,26 +95,8 @@
             this.dataGridView1.RowTemplate.Height = 80;
             this.dataGridView1.Size = new System.Drawing.Size(697, 491);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            // 
-            // doAnCuoiKiDataSet
-            // 
-            this.doAnCuoiKiDataSet.DataSetName = "DoAnCuoiKiDataSet";
-            this.doAnCuoiKiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // doAnCuoiKiDataSetBindingSource
-            // 
-            this.doAnCuoiKiDataSetBindingSource.DataSource = this.doAnCuoiKiDataSet;
-            this.doAnCuoiKiDataSetBindingSource.Position = 0;
-            // 
-            // nhanVienBindingSource
-            // 
-            this.nhanVienBindingSource.DataMember = "NhanVien";
-            this.nhanVienBindingSource.DataSource = this.doAnCuoiKiDataSetBindingSource;
-            // 
-            // nhanVienTableAdapter
-            // 
-            this.nhanVienTableAdapter.ClearBeforeFill = true;
             // 
             // maNVDataGridViewTextBoxColumn
             // 
@@ -179,6 +161,25 @@
             this.anhDataGridViewImageColumn.MinimumWidth = 6;
             this.anhDataGridViewImageColumn.Name = "anhDataGridViewImageColumn";
             this.anhDataGridViewImageColumn.Width = 80;
+            // 
+            // nhanVienBindingSource
+            // 
+            this.nhanVienBindingSource.DataMember = "NhanVien";
+            this.nhanVienBindingSource.DataSource = this.doAnCuoiKiDataSetBindingSource;
+            // 
+            // doAnCuoiKiDataSetBindingSource
+            // 
+            this.doAnCuoiKiDataSetBindingSource.DataSource = this.doAnCuoiKiDataSet;
+            this.doAnCuoiKiDataSetBindingSource.Position = 0;
+            // 
+            // doAnCuoiKiDataSet
+            // 
+            this.doAnCuoiKiDataSet.DataSetName = "DoAnCuoiKiDataSet";
+            this.doAnCuoiKiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nhanVienTableAdapter
+            // 
+            this.nhanVienTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -420,18 +421,6 @@
             this.panel1.Size = new System.Drawing.Size(238, 50);
             this.panel1.TabIndex = 27;
             // 
-            // namButton
-            // 
-            this.namButton.AutoSize = true;
-            this.namButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.namButton.Location = new System.Drawing.Point(21, 15);
-            this.namButton.Name = "namButton";
-            this.namButton.Size = new System.Drawing.Size(65, 24);
-            this.namButton.TabIndex = 0;
-            this.namButton.TabStop = true;
-            this.namButton.Text = "Nam";
-            this.namButton.UseVisualStyleBackColor = true;
-            // 
             // nuButton
             // 
             this.nuButton.AutoSize = true;
@@ -443,6 +432,18 @@
             this.nuButton.TabStop = true;
             this.nuButton.Text = "Nu";
             this.nuButton.UseVisualStyleBackColor = true;
+            // 
+            // namButton
+            // 
+            this.namButton.AutoSize = true;
+            this.namButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.namButton.Location = new System.Drawing.Point(21, 15);
+            this.namButton.Name = "namButton";
+            this.namButton.Size = new System.Drawing.Size(65, 24);
+            this.namButton.TabIndex = 0;
+            this.namButton.TabStop = true;
+            this.namButton.Text = "Nam";
+            this.namButton.UseVisualStyleBackColor = true;
             // 
             // QuanLiNhanVienForm
             // 
@@ -478,9 +479,9 @@
             this.Text = "QuanLiNhanVienForm";
             this.Load += new System.EventHandler(this.QuanLiNhanVienForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

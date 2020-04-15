@@ -34,5 +34,15 @@ namespace DoAn
             QuanLiNhanVienForm qlnv = new QuanLiNhanVienForm();
             qlnv.Show();
         }
+
+        private void baoCaoCuoiNgayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BangPhanCong bpc = new BangPhanCong();
+            bpc.Show();
+        }
+
+        private void gioLamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

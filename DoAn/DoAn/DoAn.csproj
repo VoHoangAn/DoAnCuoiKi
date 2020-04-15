@@ -46,10 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BangPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BangPhanCong.Designer.cs">
+      <DependentUpon>BangPhanCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoAnCuoiKiDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DoAnCuoiKiDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DoAnCuoiKiDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="LaoCongForm.cs">
@@ -98,6 +114,9 @@
     <Compile Include="UpdateDeleteNhanVienForm.Designer.cs">
       <DependentUpon>UpdateDeleteNhanVienForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BangPhanCong.resx">
+      <DependentUpon>BangPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LaoCongForm.resx">
       <DependentUpon>LaoCongForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +154,28 @@
     </None>
     <None Include="DoAnCuoiKiDataSet.xss">
       <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSet1.xsc">
+      <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoAnCuoiKiDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoAnCuoiKiDataSet1.xss">
+      <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSet21.xsc">
+      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoAnCuoiKiDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoAnCuoiKiDataSet21.xss">
+      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

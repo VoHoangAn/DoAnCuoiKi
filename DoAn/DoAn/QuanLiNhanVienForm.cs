@@ -250,5 +250,10 @@ namespace DoAn
             SqlCommand cmd = new SqlCommand("SELECT * FROM NhanVien WHERE CONCAT(HoTen,ChucVu) LIKE'%" + findTextBox.Text.ToString() + "%'");
             LoadData(cmd);           
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

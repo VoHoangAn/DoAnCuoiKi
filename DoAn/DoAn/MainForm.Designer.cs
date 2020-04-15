@@ -106,25 +106,27 @@
             // baoCaoCuoiNgayToolStripMenuItem
             // 
             this.baoCaoCuoiNgayToolStripMenuItem.Name = "baoCaoCuoiNgayToolStripMenuItem";
-            this.baoCaoCuoiNgayToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.baoCaoCuoiNgayToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.baoCaoCuoiNgayToolStripMenuItem.Text = "Bang Phan Cong";
+            this.baoCaoCuoiNgayToolStripMenuItem.Click += new System.EventHandler(this.baoCaoCuoiNgayToolStripMenuItem_Click);
             // 
             // gioLamToolStripMenuItem
             // 
             this.gioLamToolStripMenuItem.Name = "gioLamToolStripMenuItem";
-            this.gioLamToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.gioLamToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gioLamToolStripMenuItem.Text = "Chinh Sua Ca Lam";
+            this.gioLamToolStripMenuItem.Click += new System.EventHandler(this.gioLamToolStripMenuItem_Click);
             // 
             // nhatKyHeThongToolStripMenuItem
             // 
             this.nhatKyHeThongToolStripMenuItem.Name = "nhatKyHeThongToolStripMenuItem";
-            this.nhatKyHeThongToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.nhatKyHeThongToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nhatKyHeThongToolStripMenuItem.Text = "Nhat Ky Ca Lam";
             // 
             // soThuChiToolStripMenuItem
             // 
             this.soThuChiToolStripMenuItem.Name = "soThuChiToolStripMenuItem";
-            this.soThuChiToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.soThuChiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.soThuChiToolStripMenuItem.Text = "So Thu/Chi";
             // 
             // MainForm
