@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.idComboBox = new System.Windows.Forms.ComboBox();
+            this.bangChiaCaTamThoiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doAnCuoiKiDataSet2 = new DoAn.DoAnCuoiKiDataSet2();
             this.bangPhanCongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doAnCuoiKiDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doAnCuoiKiDataSet1 = new DoAn.DoAnCuoiKiDataSet1();
@@ -56,10 +58,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.bangPhanCongTableAdapter = new DoAn.DoAnCuoiKiDataSet1TableAdapters.BangPhanCongTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bangPhanCongBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.editButton = new System.Windows.Forms.Button();
-            this.refreshButton = new System.Windows.Forms.Button();
-            this.printButton = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chucVuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +68,16 @@
             this.thuSauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thuBayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chuNhatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bangPhanCongBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.editButton = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
+            this.printButton = new System.Windows.Forms.Button();
+            this.bangChiaCaTamThoiTableAdapter = new DoAn.DoAnCuoiKiDataSet2TableAdapters.BangChiaCaTamThoiTableAdapter();
+            this.Reset = new System.Windows.Forms.Button();
+            this.bangPhanCongBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.bangPhanCongBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bangChiaCaTamThoiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1)).BeginInit();
@@ -77,11 +85,13 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // idComboBox
             // 
-            this.idComboBox.DataSource = this.bangPhanCongBindingSource;
+            this.idComboBox.DataSource = this.bangChiaCaTamThoiBindingSource;
             this.idComboBox.DisplayMember = "ID";
             this.idComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.idComboBox.FormattingEnabled = true;
@@ -90,6 +100,16 @@
             this.idComboBox.Size = new System.Drawing.Size(121, 28);
             this.idComboBox.TabIndex = 0;
             this.idComboBox.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            // 
+            // bangChiaCaTamThoiBindingSource
+            // 
+            this.bangChiaCaTamThoiBindingSource.DataMember = "BangChiaCaTamThoi";
+            this.bangChiaCaTamThoiBindingSource.DataSource = this.doAnCuoiKiDataSet2;
+            // 
+            // doAnCuoiKiDataSet2
+            // 
+            this.doAnCuoiKiDataSet2.DataSetName = "DoAnCuoiKiDataSet2";
+            this.doAnCuoiKiDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bangPhanCongBindingSource
             // 
@@ -119,7 +139,7 @@
             // 
             // tenComboBox
             // 
-            this.tenComboBox.DataSource = this.bangPhanCongBindingSource1;
+            this.tenComboBox.DataSource = this.bangChiaCaTamThoiBindingSource;
             this.tenComboBox.DisplayMember = "HoTen";
             this.tenComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tenComboBox.FormattingEnabled = true;
@@ -384,53 +404,15 @@
             this.thuSauDataGridViewTextBoxColumn,
             this.thuBayDataGridViewTextBoxColumn,
             this.chuNhatDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bangPhanCongBindingSource2;
+            this.dataGridView1.DataSource = this.bangChiaCaTamThoiBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 155);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(876, 221);
+            this.dataGridView1.Size = new System.Drawing.Size(852, 221);
             this.dataGridView1.TabIndex = 20;
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            // 
-            // bangPhanCongBindingSource2
-            // 
-            this.bangPhanCongBindingSource2.DataMember = "BangPhanCong";
-            this.bangPhanCongBindingSource2.DataSource = this.doAnCuoiKiDataSet1BindingSource;
-            // 
-            // editButton
-            // 
-            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.editButton.Location = new System.Drawing.Point(16, 403);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(165, 58);
-            this.editButton.TabIndex = 21;
-            this.editButton.Text = "Edit";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.refreshButton.Location = new System.Drawing.Point(205, 403);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(165, 58);
-            this.refreshButton.TabIndex = 22;
-            this.refreshButton.Text = "Refresh";
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
-            // 
-            // printButton
-            // 
-            this.printButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.printButton.Location = new System.Drawing.Point(396, 403);
-            this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(165, 58);
-            this.printButton.TabIndex = 23;
-            this.printButton.Text = "Print";
-            this.printButton.UseVisualStyleBackColor = true;
-            this.printButton.Click += new System.EventHandler(this.printButton_Click);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -457,6 +439,7 @@
             this.chucVuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.chucVuDataGridViewTextBoxColumn.Name = "chucVuDataGridViewTextBoxColumn";
             this.chucVuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.chucVuDataGridViewTextBoxColumn.Width = 125;
             // 
             // thuHaiDataGridViewTextBoxColumn
             // 
@@ -521,12 +504,76 @@
             this.chuNhatDataGridViewTextBoxColumn.ReadOnly = true;
             this.chuNhatDataGridViewTextBoxColumn.Width = 80;
             // 
+            // bangPhanCongBindingSource2
+            // 
+            this.bangPhanCongBindingSource2.DataMember = "BangPhanCong";
+            this.bangPhanCongBindingSource2.DataSource = this.doAnCuoiKiDataSet1BindingSource;
+            // 
+            // editButton
+            // 
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.editButton.Location = new System.Drawing.Point(16, 403);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(165, 58);
+            this.editButton.TabIndex = 21;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.refreshButton.Location = new System.Drawing.Point(205, 403);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(165, 58);
+            this.refreshButton.TabIndex = 22;
+            this.refreshButton.Text = "Refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
+            // printButton
+            // 
+            this.printButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.printButton.Location = new System.Drawing.Point(385, 403);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(165, 58);
+            this.printButton.TabIndex = 23;
+            this.printButton.Text = "Print";
+            this.printButton.UseVisualStyleBackColor = true;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
+            // 
+            // bangChiaCaTamThoiTableAdapter
+            // 
+            this.bangChiaCaTamThoiTableAdapter.ClearBeforeFill = true;
+            // 
+            // Reset
+            // 
+            this.Reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Reset.Location = new System.Drawing.Point(567, 403);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(165, 58);
+            this.Reset.TabIndex = 24;
+            this.Reset.Text = "Reset Bang";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
+            // 
+            // bangPhanCongBindingSource3
+            // 
+            this.bangPhanCongBindingSource3.DataMember = "BangPhanCong";
+            this.bangPhanCongBindingSource3.DataSource = this.doAnCuoiKiDataSet1BindingSource;
+            // 
+            // bangPhanCongBindingSource4
+            // 
+            this.bangPhanCongBindingSource4.DataMember = "BangPhanCong";
+            this.bangPhanCongBindingSource4.DataSource = this.doAnCuoiKiDataSet1BindingSource;
+            // 
             // UpdateCaLam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(894, 468);
+            this.ClientSize = new System.Drawing.Size(882, 468);
+            this.Controls.Add(this.Reset);
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.editButton);
@@ -540,6 +587,8 @@
             this.Name = "UpdateCaLam";
             this.Text = "UpdateCaLam";
             this.Load += new System.EventHandler(this.UpdateCaLam_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bangChiaCaTamThoiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1)).EndInit();
@@ -548,6 +597,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -586,6 +637,9 @@
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Button printButton;
+        private DoAnCuoiKiDataSet2 doAnCuoiKiDataSet2;
+        private System.Windows.Forms.BindingSource bangChiaCaTamThoiBindingSource;
+        private DoAnCuoiKiDataSet2TableAdapters.BangChiaCaTamThoiTableAdapter bangChiaCaTamThoiTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn chucVuDataGridViewTextBoxColumn;
@@ -596,5 +650,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn thuSauDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thuBayDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn chuNhatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button Reset;
+        private System.Windows.Forms.BindingSource bangPhanCongBindingSource3;
+        private System.Windows.Forms.BindingSource bangPhanCongBindingSource4;
     }
 }

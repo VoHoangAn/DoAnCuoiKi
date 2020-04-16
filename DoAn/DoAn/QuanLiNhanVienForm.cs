@@ -30,7 +30,6 @@ namespace DoAn
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             AddTextBox(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-
         }
         private void AddTextBox(string id)
         {
