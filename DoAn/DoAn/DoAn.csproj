@@ -88,6 +88,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="My_DB.cs" />
+    <Compile Include="PhanCong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NhanVien.cs" />
@@ -108,6 +109,12 @@
     </Compile>
     <Compile Include="TiepTanForm.Designer.cs">
       <DependentUpon>TiepTanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCaLam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateCaLam.Designer.cs">
+      <DependentUpon>UpdateCaLam.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateDeleteNhanVienForm.cs">
       <SubType>Form</SubType>
@@ -147,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TiepTanForm.resx">
       <DependentUpon>TiepTanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCaLam.resx">
+      <DependentUpon>UpdateCaLam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateDeleteNhanVienForm.resx">
       <DependentUpon>UpdateDeleteNhanVienForm.cs</DependentUpon>

@@ -19,6 +19,7 @@ namespace DoAn
         }
         NhanVien nv = new NhanVien();
         My_DB mydb = new My_DB();
+        PhanCong bpc = new PhanCong();
         private void ThayDoiNhanVien_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'doAnCuoiKiDataSet1.BangPhanCong' table. You can move, or remove it, as needed.
@@ -65,8 +66,8 @@ namespace DoAn
         }
         private void SwapPhanCongNhanVien(int id1,string a,int id2,string b,int pc1,int pc2)
         {
-            nv.UpdateBangPhanCong(pc1,id2, b);
-            nv.UpdateBangPhanCong(pc2,id1, a);
+            bpc.UpdateBangPhanCong(pc1,id2, b);
+            bpc.UpdateBangPhanCong(pc2,id1, a);
         }
         public void AddComboBox(string id)
         {

@@ -132,24 +132,6 @@ namespace DoAn
 
         }
 
-        public bool UpdateBangPhanCong(int MaPc,int id,string HoTen)
-        {
-            SqlCommand cmd = new SqlCommand("UPDATE BangPhanCong SET ID = @id, HoTen = @HoTen WHERE MaPhanCong = " + MaPc, mydb.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            cmd.Parameters.Add("@HoTen", SqlDbType.VarChar).Value = HoTen;
-            mydb.openConnection();
-            if (cmd.ExecuteNonQuery() == 1)
-            {
-                mydb.closeConnection();
-                return true;
-            }
-            else
-            {
-                mydb.closeConnection();
-                return false;
-            }
-
-        }
-
+        
     }
 }

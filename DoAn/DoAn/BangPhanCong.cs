@@ -20,6 +20,7 @@ namespace DoAn
             InitializeComponent();
         }
         NhanVien nv = new NhanVien();
+        BangPhanCong bpc = new BangPhanCong();
         private void BangPhanCong_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'doAnCuoiKiDataSet1.BangPhanCong' table. You can move, or remove it, as needed.
