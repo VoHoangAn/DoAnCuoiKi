@@ -22,8 +22,7 @@ namespace DoAn
         NhanVien nv = new NhanVien();
         private void QuanLiNhanVienForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'doAnCuoiKiDataSet.NhanVien' table. You can move, or remove it, as needed.
-            this.nhanVienTableAdapter.Fill(this.doAnCuoiKiDataSet.NhanVien);
+            // TODO: This line of code loads data into the 'doAnCuoiKiDataSet4.NhanVien' table. You can move, or remove it, as needed.
 
         }
 

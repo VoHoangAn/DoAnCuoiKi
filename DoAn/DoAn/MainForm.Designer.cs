@@ -121,7 +121,8 @@
             // 
             this.nhatKyHeThongToolStripMenuItem.Name = "nhatKyHeThongToolStripMenuItem";
             this.nhatKyHeThongToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.nhatKyHeThongToolStripMenuItem.Text = "Nhat Ky Ca Lam";
+            this.nhatKyHeThongToolStripMenuItem.Text = "Bao Cao Cuoi Ngay";
+            this.nhatKyHeThongToolStripMenuItem.Click += new System.EventHandler(this.nhatKyHeThongToolStripMenuItem_Click);
             // 
             // soThuChiToolStripMenuItem
             // 

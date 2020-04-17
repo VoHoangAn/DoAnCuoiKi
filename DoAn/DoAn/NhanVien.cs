@@ -22,7 +22,7 @@ namespace DoAn
         }
         public bool InsertNhanVien(int MaNV, string HoTen, string GioiTinh, DateTime NSinh, string DChi, string ChucVu,int LuongCB, MemoryStream pic)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO NhanVien(MaNV,HoTen,GioiTinh,NgaySinh,DChi,ChucVu,LuongCB,Anh)" + "VALUES(@id,@ten,@gt,@ns,@dc,@cv,@lcb,@pic)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO NhanVien(MaNV,HoTen,GioiTinh,NgaySinh,DChi,ChucVu,Anh)" + "VALUES(@id,@ten,@gt,@ns,@dc,@cv,@lcb,@pic)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = MaNV;
             cmd.Parameters.Add("@ten", SqlDbType.VarChar).Value = HoTen;
             cmd.Parameters.Add("@gt", SqlDbType.VarChar).Value = GioiTinh;
@@ -92,15 +92,16 @@ namespace DoAn
             SqlCommand cmd = new SqlCommand("SELECT * FROM NhanVien WHERE MaNV = " + MaNV, mydb.getConnection);
             DataTable tab = getNhanVien(cmd);
             TimeSpan a = d2 - d1;
-            Globals.setLuongNgay(a.TotalHours * Convert.ToDouble(tab.Rows[0]["LuongCB"]));
-            SqlCommand cmd2 = new SqlCommand("INSERT INTO Log(MaNV,HoTen,Ngay,Checkin,Checkout,ThoiGianLam,Them,Thieu)" + "VALUES(@manv,@ten,@ngay,@in,@out,@tg,@them,@thieu)", mydb.getConnection);
+            SqlCommand cmd2 = new SqlCommand("INSERT INTO Log(MaNV,HoTen,Ngay,Checkin,Checkout,ThoiGianLam,Them,Thieu,LuongNgay)" + "VALUES(@manv,@ten,@ngay,@in,@out,@tg,@them,@thieu,@ln)", mydb.getConnection);
             cmd2.Parameters.Add("@manv", SqlDbType.Int).Value = MaNV;
             cmd2.Parameters.Add("@ten", SqlDbType.VarChar).Value = tab.Rows[0]["HoTen"].ToString();
             cmd2.Parameters.Add("@ngay", SqlDbType.Date).Value = d1.Date ;
             cmd2.Parameters.Add("@in", SqlDbType.VarChar).Value = d1.ToShortTimeString();
             cmd2.Parameters.Add("@out", SqlDbType.VarChar).Value = d2.ToShortTimeString();
             cmd2.Parameters.Add("@tg", SqlDbType.Int).Value = a.TotalHours;
-            if(a.TotalHours >= 8)
+            cmd2.Parameters.Add("@ln", SqlDbType.Int).Value = a.TotalHours * Convert.ToInt32(tab.Rows[0]["LuongCB"]);
+            Globals.setLuongNgay(a.TotalHours * Convert.ToDouble(tab.Rows[0]["LuongCB"]));
+            if (a.TotalHours >= 8)
             {
                 cmd2.Parameters.Add("@them", SqlDbType.Int).Value = a.TotalHours - 8;
                 cmd2.Parameters.Add("@thieu", SqlDbType.Int).Value = 0;

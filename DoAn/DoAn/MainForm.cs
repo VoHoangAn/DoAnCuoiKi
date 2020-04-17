@@ -46,5 +46,11 @@ namespace DoAn
             UpdateCaLam up = new UpdateCaLam();
             up.Show();
         }
+
+        private void nhatKyHeThongToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Report rp = new Report();
+            rp.Show();
+        }
     }
 }
