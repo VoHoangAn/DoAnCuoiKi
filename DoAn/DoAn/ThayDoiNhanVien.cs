@@ -22,8 +22,8 @@ namespace DoAn
         PhanCong bpc = new PhanCong();
         private void ThayDoiNhanVien_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'doAnCuoiKiDataSet1.BangPhanCong' table. You can move, or remove it, as needed.
-            this.bangPhanCongTableAdapter.Fill(this.doAnCuoiKiDataSet1.BangPhanCong);
+            // TODO: This line of code loads data into the 'doAnCuoiKiDataSet.BangPhanCong' table. You can move, or remove it, as needed.
+            this.bangPhanCongTableAdapter.Fill(this.doAnCuoiKiDataSet.BangPhanCong);
         }
 
         private void thayButton_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace DoAn
             SqlCommand cmd = new SqlCommand("SELECT * FROM BangPhanCong WHERE ID = @id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = comboBox1.Text;
             DataTable tab = nv.getNhanVien(cmd);
-            ten1 = tab.Rows[0]["HoTen"].ToString();
+            ten1 = tab.Rows[0]["Ten"].ToString();
             mapc1 = Convert.ToInt32(tab.Rows[0]["MaPhanCong"].ToString());
             cmd.CommandText = "SELECT * FROM BangPhanCong WHERE ChucVu = @cv AND ID = @id2";
             cmd.Parameters.Add("@cv", SqlDbType.VarChar).Value = tab.Rows[0]["ChucVu"].ToString();
@@ -45,7 +45,7 @@ namespace DoAn
             DataTable tab2 = nv.getNhanVien(cmd);    
             if(tab2.Rows.Count > 0)
             {
-                ten2 = tab2.Rows[0]["HoTen"].ToString();
+                ten2 = tab2.Rows[0]["Ten"].ToString();
                 mapc2 = Convert.ToInt32(tab2.Rows[0]["MaPhanCong"].ToString());
                 if (mapc1 == mapc2)
                 {

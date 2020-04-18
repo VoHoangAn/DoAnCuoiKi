@@ -17,8 +17,8 @@ namespace DoAn
         PhanCong pc = new PhanCong();
         private void UpdateCaLam_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'doAnCuoiKiDataSet2.BangChiaCaTamThoi' table. You can move, or remove it, as needed.
-            this.bangChiaCaTamThoiTableAdapter.Fill(this.doAnCuoiKiDataSet2.BangChiaCaTamThoi);
+            // TODO: This line of code loads data into the 'doAnCuoiKiDataSet1.BangChiaCaTamThoi' table. You can move, or remove it, as needed.
+            this.bangChiaCaTamThoiTableAdapter.Fill(this.doAnCuoiKiDataSet1.BangChiaCaTamThoi);
         }
         private void AddText(string id)
         {
@@ -31,7 +31,7 @@ namespace DoAn
             t6ComboBox.Text = tab.Rows[0]["ThuSau"].ToString();
             t7ComboBox.Text = tab.Rows[0]["ThuBay"].ToString();
             cnComboBox.Text = tab.Rows[0]["ChuNhat"].ToString();
-            tenComboBox.Text = tab.Rows[0]["HoTen"].ToString();
+            tenComboBox.Text = tab.Rows[0]["Ten"].ToString();
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
@@ -120,6 +120,12 @@ namespace DoAn
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             AddText(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+        }
+
+        private void upButton_Click(object sender, EventArgs e)
+        {
+            pc.UpBangTamThoiThanhChinhThuc();
+            MessageBox.Show("Thanh cong", "Up", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

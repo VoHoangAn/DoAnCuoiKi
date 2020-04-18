@@ -60,15 +60,15 @@
     <Compile Include="BangPhanCong.Designer.cs">
       <DependentUpon>BangPhanCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoAnCuoiKiDataSet1.Designer.cs">
+    <Compile Include="DoAnCuoiKiDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
+      <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DoAnCuoiKiDataSet21.Designer.cs">
+    <Compile Include="DoAnCuoiKiDataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
+      <DependentUpon>DoAnCuoiKiDataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="DoAnCuoiKiDataSet31.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -81,6 +81,12 @@
       <DependentUpon>DoAnCuoiKiDataSet4.xsd</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="InDanhSachNhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InDanhSachNhanVienForm.Designer.cs">
+      <DependentUpon>InDanhSachNhanVienForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,27 +185,27 @@
     <EmbeddedResource Include="UpdateDeleteNhanVienForm.resx">
       <DependentUpon>UpdateDeleteNhanVienForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DoAnCuoiKiDataSet1.xsc">
-      <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
+    <None Include="DoAnCuoiKiDataSet.xsc">
+      <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DoAnCuoiKiDataSet1.xsd">
+    <None Include="DoAnCuoiKiDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DoAnCuoiKiDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DoAnCuoiKiDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DoAnCuoiKiDataSet1.xss">
-      <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
+    <None Include="DoAnCuoiKiDataSet.xss">
+      <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DoAnCuoiKiDataSet21.xsc">
-      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
+    <None Include="DoAnCuoiKiDataSet11.xsc">
+      <DependentUpon>DoAnCuoiKiDataSet11.xsd</DependentUpon>
     </None>
-    <None Include="DoAnCuoiKiDataSet21.xsd">
+    <None Include="DoAnCuoiKiDataSet11.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DoAnCuoiKiDataSet21.Designer.cs</LastGenOutput>
+      <LastGenOutput>DoAnCuoiKiDataSet11.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DoAnCuoiKiDataSet21.xss">
-      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
+    <None Include="DoAnCuoiKiDataSet11.xss">
+      <DependentUpon>DoAnCuoiKiDataSet11.xsd</DependentUpon>
     </None>
     <None Include="DoAnCuoiKiDataSet31.xsc">
       <DependentUpon>DoAnCuoiKiDataSet31.xsd</DependentUpon>

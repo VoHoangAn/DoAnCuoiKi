@@ -36,6 +36,7 @@
             this.logTableAdapter = new DoAn.DoAnCuoiKiDataSet3TableAdapters.LogTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkoutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.themDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +92,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maNVDataGridViewTextBoxColumn,
+            this.HoTen,
             this.checkinDataGridViewTextBoxColumn,
             this.checkoutDataGridViewTextBoxColumn,
             this.themDataGridViewTextBoxColumn,
@@ -112,6 +114,14 @@
             this.maNVDataGridViewTextBoxColumn.HeaderText = "Ma NV";
             this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "Ten";
+            this.HoTen.HeaderText = "Ten";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 125;
             // 
             // checkinDataGridViewTextBoxColumn
             // 
@@ -169,6 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1000, 589);
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.dataGridView1);
@@ -195,14 +206,13 @@
         private System.Windows.Forms.BindingSource logBindingSource;
         private DoAnCuoiKiDataSet3TableAdapters.LogTableAdapter logTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkinDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkoutDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thoiGianLamDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn themDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thieuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn LuongNgay;
-        private System.Windows.Forms.Button printButton;
     }
 }

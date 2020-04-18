@@ -12,6 +12,7 @@ namespace DoAn
     class NhanVien
     {
         My_DB mydb = new My_DB();
+        PhanCong pc = new PhanCong();
         public DataTable getNhanVien(SqlCommand cmd)
         {
             cmd.Connection = mydb.getConnection;
@@ -20,11 +21,13 @@ namespace DoAn
             adp.Fill(table);
             return table;
         }
-        public bool InsertNhanVien(int MaNV, string HoTen, string GioiTinh, DateTime NSinh, string DChi, string ChucVu,int LuongCB, MemoryStream pic)
+        public bool InsertNhanVien(int MaNV,string ho,string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu,int LuongCB, MemoryStream pic)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO NhanVien(MaNV,HoTen,GioiTinh,NgaySinh,DChi,ChucVu,Anh)" + "VALUES(@id,@ten,@gt,@ns,@dc,@cv,@lcb,@pic)", mydb.getConnection);
+            pc.InsertFromNhanVienToBangPhanCong(MaNV,Ten, ChucVu);
+            SqlCommand cmd = new SqlCommand("INSERT INTO NhanVien(MaNV,Ho,Ten,GioiTinh,NgaySinh,DChi,ChucVu,Anh)" + "VALUES(@id,@ho,@ten,@gt,@ns,@dc,@cv,@pic)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = MaNV;
-            cmd.Parameters.Add("@ten", SqlDbType.VarChar).Value = HoTen;
+            cmd.Parameters.Add("@ho", SqlDbType.VarChar).Value = ho;
+            cmd.Parameters.Add("@ten", SqlDbType.VarChar).Value = Ten;
             cmd.Parameters.Add("@gt", SqlDbType.VarChar).Value = GioiTinh;
             cmd.Parameters.Add("@ns", SqlDbType.DateTime).Value = NSinh;
             cmd.Parameters.Add("lcb", SqlDbType.Int).Value = LuongCB;
@@ -45,11 +48,13 @@ namespace DoAn
 
         }
 
-        public bool EditNhanVien(int MaNV, string HoTen, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, MemoryStream pic)
+        public bool EditNhanVien(int MaNV,string ho, string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, MemoryStream pic)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE NhanVien SET HoTen-@ten,GioiTinh-@gt,NgaySinh-@ns,DChi-@dc,ChucVu-@cv,Anh-@pic WHERE MaNV = @id", mydb.getConnection);
+            pc.UpdateFromNhanVienToBangPhanCong(MaNV, Ten, ChucVu);
+            SqlCommand cmd = new SqlCommand("UPDATE NhanVien SET Ho=@ho,Ten=@ten,GioiTinh=@gt,NgaySinh=@ns,DChi=@dc,ChucVu=@cv,Anh=@pic WHERE MaNV = @id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = MaNV;
-            cmd.Parameters.Add("@ten", SqlDbType.VarChar).Value = HoTen;
+            cmd.Parameters.Add("@ho", SqlDbType.VarChar).Value = ho;
+            cmd.Parameters.Add("@ten", SqlDbType.VarChar).Value = Ten;
             cmd.Parameters.Add("@gt", SqlDbType.VarChar).Value = GioiTinh;
             cmd.Parameters.Add("@ns", SqlDbType.DateTime).Value = NSinh;
             cmd.Parameters.Add("@dc", SqlDbType.VarChar).Value = DChi;
@@ -71,7 +76,8 @@ namespace DoAn
         }
         public bool DeleteNhanVien(int MaNV)
         {
-            SqlCommand cmd = new SqlCommand("DELETE FROM NhanVien WHERE id = @id", mydb.getConnection);
+            pc.DeleteBangPhanCong(MaNV);
+            SqlCommand cmd = new SqlCommand("DELETE FROM NhanVien WHERE MaNV = @id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = MaNV;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -92,9 +98,9 @@ namespace DoAn
             SqlCommand cmd = new SqlCommand("SELECT * FROM NhanVien WHERE MaNV = " + MaNV, mydb.getConnection);
             DataTable tab = getNhanVien(cmd);
             TimeSpan a = d2 - d1;
-            SqlCommand cmd2 = new SqlCommand("INSERT INTO Log(MaNV,HoTen,Ngay,Checkin,Checkout,ThoiGianLam,Them,Thieu,LuongNgay)" + "VALUES(@manv,@ten,@ngay,@in,@out,@tg,@them,@thieu,@ln)", mydb.getConnection);
+            SqlCommand cmd2 = new SqlCommand("INSERT INTO Log(MaNV,Ten,Ngay,Checkin,Checkout,ThoiGianLam,Them,Thieu,LuongNgay)" + "VALUES(@manv,@ten,@ngay,@in,@out,@tg,@them,@thieu,@ln)", mydb.getConnection);
             cmd2.Parameters.Add("@manv", SqlDbType.Int).Value = MaNV;
-            cmd2.Parameters.Add("@ten", SqlDbType.VarChar).Value = tab.Rows[0]["HoTen"].ToString();
+            cmd2.Parameters.Add("@ten", SqlDbType.VarChar).Value = tab.Rows[0]["Ten"].ToString();
             cmd2.Parameters.Add("@ngay", SqlDbType.Date).Value = d1.Date ;
             cmd2.Parameters.Add("@in", SqlDbType.VarChar).Value = d1.ToShortTimeString();
             cmd2.Parameters.Add("@out", SqlDbType.VarChar).Value = d2.ToShortTimeString();

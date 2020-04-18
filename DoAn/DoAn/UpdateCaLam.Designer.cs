@@ -30,14 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.idComboBox = new System.Windows.Forms.ComboBox();
-            this.bangChiaCaTamThoiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.doAnCuoiKiDataSet2 = new DoAn.DoAnCuoiKiDataSet2();
-            this.bangPhanCongBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.doAnCuoiKiDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bangChiaCaTamThoiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.doAnCuoiKiDataSet1 = new DoAn.DoAnCuoiKiDataSet1();
+            this.bangChiaCaTamThoiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doAnCuoiKiDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.tenComboBox = new System.Windows.Forms.ComboBox();
-            this.bangPhanCongBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,42 +54,34 @@
             this.cnComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.bangPhanCongTableAdapter = new DoAn.DoAnCuoiKiDataSet1TableAdapters.BangPhanCongTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chucVuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thuHaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thuBaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thuTuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thuNamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thuSauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thuBayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chuNhatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bangPhanCongBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
             this.printButton = new System.Windows.Forms.Button();
-            this.bangChiaCaTamThoiTableAdapter = new DoAn.DoAnCuoiKiDataSet2TableAdapters.BangChiaCaTamThoiTableAdapter();
             this.Reset = new System.Windows.Forms.Button();
-            this.bangPhanCongBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.bangPhanCongBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bangChiaCaTamThoiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1BindingSource)).BeginInit();
+            this.bangChiaCaTamThoiTableAdapter = new DoAn.DoAnCuoiKiDataSet1TableAdapters.BangChiaCaTamThoiTableAdapter();
+            this.upButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.bangChiaCaTamThoiBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bangChiaCaTamThoiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1BindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // idComboBox
             // 
-            this.idComboBox.DataSource = this.bangChiaCaTamThoiBindingSource;
+            this.idComboBox.DataSource = this.bangChiaCaTamThoiBindingSource1;
             this.idComboBox.DisplayMember = "ID";
             this.idComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.idComboBox.FormattingEnabled = true;
@@ -101,25 +91,10 @@
             this.idComboBox.TabIndex = 0;
             this.idComboBox.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
-            // bangChiaCaTamThoiBindingSource
+            // bangChiaCaTamThoiBindingSource1
             // 
-            this.bangChiaCaTamThoiBindingSource.DataMember = "BangChiaCaTamThoi";
-            this.bangChiaCaTamThoiBindingSource.DataSource = this.doAnCuoiKiDataSet2;
-            // 
-            // doAnCuoiKiDataSet2
-            // 
-            this.doAnCuoiKiDataSet2.DataSetName = "DoAnCuoiKiDataSet2";
-            this.doAnCuoiKiDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bangPhanCongBindingSource
-            // 
-            this.bangPhanCongBindingSource.DataMember = "BangPhanCong";
-            this.bangPhanCongBindingSource.DataSource = this.doAnCuoiKiDataSet1BindingSource;
-            // 
-            // doAnCuoiKiDataSet1BindingSource
-            // 
-            this.doAnCuoiKiDataSet1BindingSource.DataSource = this.doAnCuoiKiDataSet1;
-            this.doAnCuoiKiDataSet1BindingSource.Position = 0;
+            this.bangChiaCaTamThoiBindingSource1.DataMember = "BangChiaCaTamThoi";
+            this.bangChiaCaTamThoiBindingSource1.DataSource = this.doAnCuoiKiDataSet1;
             // 
             // doAnCuoiKiDataSet1
             // 
@@ -139,8 +114,8 @@
             // 
             // tenComboBox
             // 
-            this.tenComboBox.DataSource = this.bangChiaCaTamThoiBindingSource;
-            this.tenComboBox.DisplayMember = "HoTen";
+            this.tenComboBox.DataSource = this.bangChiaCaTamThoiBindingSource1;
+            this.tenComboBox.DisplayMember = "Ten";
             this.tenComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tenComboBox.FormattingEnabled = true;
             this.tenComboBox.Location = new System.Drawing.Point(135, 104);
@@ -148,11 +123,6 @@
             this.tenComboBox.Size = new System.Drawing.Size(121, 28);
             this.tenComboBox.TabIndex = 2;
             this.tenComboBox.SelectedValueChanged += new System.EventHandler(this.tenComboBox_SelectedValueChanged);
-            // 
-            // bangPhanCongBindingSource1
-            // 
-            this.bangPhanCongBindingSource1.DataMember = "BangPhanCong";
-            this.bangPhanCongBindingSource1.DataSource = this.doAnCuoiKiDataSet1BindingSource;
             // 
             // label2
             // 
@@ -381,10 +351,6 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "Ca Lam:";
             // 
-            // bangPhanCongTableAdapter
-            // 
-            this.bangPhanCongTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -394,17 +360,17 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.hoTenDataGridViewTextBoxColumn,
-            this.chucVuDataGridViewTextBoxColumn,
-            this.thuHaiDataGridViewTextBoxColumn,
-            this.thuBaDataGridViewTextBoxColumn,
-            this.thuTuDataGridViewTextBoxColumn,
-            this.thuNamDataGridViewTextBoxColumn,
-            this.thuSauDataGridViewTextBoxColumn,
-            this.thuBayDataGridViewTextBoxColumn,
-            this.chuNhatDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bangChiaCaTamThoiBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.tenDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.dataGridView1.DataSource = this.bangChiaCaTamThoiBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(16, 155);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -414,100 +380,95 @@
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // iDDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 40;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Ma NV";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
-            // hoTenDataGridViewTextBoxColumn
+            // tenDataGridViewTextBoxColumn
             // 
-            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.HeaderText = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
-            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hoTenDataGridViewTextBoxColumn.Width = 125;
+            this.tenDataGridViewTextBoxColumn.DataPropertyName = "Ten";
+            this.tenDataGridViewTextBoxColumn.HeaderText = "Ten";
+            this.tenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenDataGridViewTextBoxColumn.Name = "tenDataGridViewTextBoxColumn";
+            this.tenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenDataGridViewTextBoxColumn.Width = 125;
             // 
-            // chucVuDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.chucVuDataGridViewTextBoxColumn.DataPropertyName = "ChucVu";
-            this.chucVuDataGridViewTextBoxColumn.HeaderText = "ChucVu";
-            this.chucVuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.chucVuDataGridViewTextBoxColumn.Name = "chucVuDataGridViewTextBoxColumn";
-            this.chucVuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.chucVuDataGridViewTextBoxColumn.Width = 125;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ChucVu";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ChucVu";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
-            // thuHaiDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.thuHaiDataGridViewTextBoxColumn.DataPropertyName = "ThuHai";
-            this.thuHaiDataGridViewTextBoxColumn.HeaderText = "ThuHai";
-            this.thuHaiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thuHaiDataGridViewTextBoxColumn.Name = "thuHaiDataGridViewTextBoxColumn";
-            this.thuHaiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thuHaiDataGridViewTextBoxColumn.Width = 80;
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ThuHai";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ThuHai";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // thuBaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.thuBaDataGridViewTextBoxColumn.DataPropertyName = "ThuBa";
-            this.thuBaDataGridViewTextBoxColumn.HeaderText = "ThuBa";
-            this.thuBaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thuBaDataGridViewTextBoxColumn.Name = "thuBaDataGridViewTextBoxColumn";
-            this.thuBaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thuBaDataGridViewTextBoxColumn.Width = 80;
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ThuBa";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ThuBa";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // thuTuDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.thuTuDataGridViewTextBoxColumn.DataPropertyName = "ThuTu";
-            this.thuTuDataGridViewTextBoxColumn.HeaderText = "ThuTu";
-            this.thuTuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thuTuDataGridViewTextBoxColumn.Name = "thuTuDataGridViewTextBoxColumn";
-            this.thuTuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thuTuDataGridViewTextBoxColumn.Width = 80;
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ThuTu";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ThuTu";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // thuNamDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.thuNamDataGridViewTextBoxColumn.DataPropertyName = "ThuNam";
-            this.thuNamDataGridViewTextBoxColumn.HeaderText = "ThuNam";
-            this.thuNamDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thuNamDataGridViewTextBoxColumn.Name = "thuNamDataGridViewTextBoxColumn";
-            this.thuNamDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thuNamDataGridViewTextBoxColumn.Width = 80;
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ThuNam";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ThuNam";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // thuSauDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            this.thuSauDataGridViewTextBoxColumn.DataPropertyName = "ThuSau";
-            this.thuSauDataGridViewTextBoxColumn.HeaderText = "ThuSau";
-            this.thuSauDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thuSauDataGridViewTextBoxColumn.Name = "thuSauDataGridViewTextBoxColumn";
-            this.thuSauDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thuSauDataGridViewTextBoxColumn.Width = 80;
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "ThuSau";
+            this.dataGridViewTextBoxColumn7.HeaderText = "ThuSau";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // thuBayDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn8
             // 
-            this.thuBayDataGridViewTextBoxColumn.DataPropertyName = "ThuBay";
-            this.thuBayDataGridViewTextBoxColumn.HeaderText = "ThuBay";
-            this.thuBayDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thuBayDataGridViewTextBoxColumn.Name = "thuBayDataGridViewTextBoxColumn";
-            this.thuBayDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thuBayDataGridViewTextBoxColumn.Width = 80;
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "ThuBay";
+            this.dataGridViewTextBoxColumn8.HeaderText = "ThuBay";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
-            // chuNhatDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn9
             // 
-            this.chuNhatDataGridViewTextBoxColumn.DataPropertyName = "ChuNhat";
-            this.chuNhatDataGridViewTextBoxColumn.HeaderText = "ChuNhat";
-            this.chuNhatDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.chuNhatDataGridViewTextBoxColumn.Name = "chuNhatDataGridViewTextBoxColumn";
-            this.chuNhatDataGridViewTextBoxColumn.ReadOnly = true;
-            this.chuNhatDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // bangPhanCongBindingSource2
-            // 
-            this.bangPhanCongBindingSource2.DataMember = "BangPhanCong";
-            this.bangPhanCongBindingSource2.DataSource = this.doAnCuoiKiDataSet1BindingSource;
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "ChuNhat";
+            this.dataGridViewTextBoxColumn9.HeaderText = "ChuNhat";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // editButton
             // 
@@ -523,7 +484,7 @@
             // refreshButton
             // 
             this.refreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.refreshButton.Location = new System.Drawing.Point(205, 403);
+            this.refreshButton.Location = new System.Drawing.Point(187, 403);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(165, 58);
             this.refreshButton.TabIndex = 22;
@@ -534,7 +495,7 @@
             // printButton
             // 
             this.printButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.printButton.Location = new System.Drawing.Point(385, 403);
+            this.printButton.Location = new System.Drawing.Point(358, 403);
             this.printButton.Name = "printButton";
             this.printButton.Size = new System.Drawing.Size(165, 58);
             this.printButton.TabIndex = 23;
@@ -542,14 +503,10 @@
             this.printButton.UseVisualStyleBackColor = true;
             this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
-            // bangChiaCaTamThoiTableAdapter
-            // 
-            this.bangChiaCaTamThoiTableAdapter.ClearBeforeFill = true;
-            // 
             // Reset
             // 
             this.Reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Reset.Location = new System.Drawing.Point(567, 403);
+            this.Reset.Location = new System.Drawing.Point(528, 403);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(165, 58);
             this.Reset.TabIndex = 24;
@@ -557,15 +514,20 @@
             this.Reset.UseVisualStyleBackColor = true;
             this.Reset.Click += new System.EventHandler(this.Reset_Click);
             // 
-            // bangPhanCongBindingSource3
+            // bangChiaCaTamThoiTableAdapter
             // 
-            this.bangPhanCongBindingSource3.DataMember = "BangPhanCong";
-            this.bangPhanCongBindingSource3.DataSource = this.doAnCuoiKiDataSet1BindingSource;
+            this.bangChiaCaTamThoiTableAdapter.ClearBeforeFill = true;
             // 
-            // bangPhanCongBindingSource4
+            // upButton
             // 
-            this.bangPhanCongBindingSource4.DataMember = "BangPhanCong";
-            this.bangPhanCongBindingSource4.DataSource = this.doAnCuoiKiDataSet1BindingSource;
+            this.upButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.upButton.Location = new System.Drawing.Point(705, 403);
+            this.upButton.Name = "upButton";
+            this.upButton.Size = new System.Drawing.Size(165, 58);
+            this.upButton.TabIndex = 25;
+            this.upButton.Text = "Up thanh Bang chinh thuc";
+            this.upButton.UseVisualStyleBackColor = true;
+            this.upButton.Click += new System.EventHandler(this.upButton_Click);
             // 
             // UpdateCaLam
             // 
@@ -573,6 +535,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(882, 468);
+            this.Controls.Add(this.upButton);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.refreshButton);
@@ -587,18 +550,13 @@
             this.Name = "UpdateCaLam";
             this.Text = "UpdateCaLam";
             this.Load += new System.EventHandler(this.UpdateCaLam_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bangChiaCaTamThoiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bangChiaCaTamThoiBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bangChiaCaTamThoiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1BindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -621,7 +579,6 @@
         private System.Windows.Forms.ComboBox thu2ComboBox;
         private System.Windows.Forms.ComboBox thu3ComboBox;
         private System.Windows.Forms.BindingSource doAnCuoiKiDataSet1BindingSource;
-        private DoAnCuoiKiDataSet1 doAnCuoiKiDataSet1;
         private System.Windows.Forms.ComboBox t4ComboBox;
         private System.Windows.Forms.ComboBox t5ComboBox;
         private System.Windows.Forms.ComboBox t6ComboBox;
@@ -629,29 +586,25 @@
         private System.Windows.Forms.ComboBox cnComboBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.BindingSource bangPhanCongBindingSource;
-        private DoAnCuoiKiDataSet1TableAdapters.BangPhanCongTableAdapter bangPhanCongTableAdapter;
-        private System.Windows.Forms.BindingSource bangPhanCongBindingSource1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource bangPhanCongBindingSource2;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Button printButton;
-        private DoAnCuoiKiDataSet2 doAnCuoiKiDataSet2;
         private System.Windows.Forms.BindingSource bangChiaCaTamThoiBindingSource;
-        private DoAnCuoiKiDataSet2TableAdapters.BangChiaCaTamThoiTableAdapter bangChiaCaTamThoiTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chucVuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thuHaiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thuBaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thuTuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thuNamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thuSauDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thuBayDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chuNhatDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button Reset;
-        private System.Windows.Forms.BindingSource bangPhanCongBindingSource3;
-        private System.Windows.Forms.BindingSource bangPhanCongBindingSource4;
+        private DoAnCuoiKiDataSet1 doAnCuoiKiDataSet1;
+        private System.Windows.Forms.BindingSource bangChiaCaTamThoiBindingSource1;
+        private DoAnCuoiKiDataSet1TableAdapters.BangChiaCaTamThoiTableAdapter bangChiaCaTamThoiTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.Button upButton;
     }
 }

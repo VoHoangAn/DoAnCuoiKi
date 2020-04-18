@@ -21,7 +21,6 @@ namespace DoAn
             InitializeComponent();
         }
         My_DB mydb = new My_DB();
-        DateTime dt = new DateTime();
         private void Report_Load(object sender, EventArgs e)
         {
             SqlCommand cmd =new SqlCommand("SELECT DISTINCT Ngay FROM Log");
@@ -46,7 +45,7 @@ namespace DoAn
             {
                 comboBox1.ValueMember = "Ngay";
                 DateTime a = Convert.ToDateTime(comboBox1.Text);
-                SqlCommand cmd = new SqlCommand("SELECT MaNV,Checkin,Checkout,Them,Thieu,Luongngay FROM Log WHERE Ngay = @n ");
+                SqlCommand cmd = new SqlCommand("SELECT MaNV,Ten,Checkin,Checkout,Them,Thieu,Luongngay FROM Log WHERE Ngay = @n ");
                 cmd.Parameters.Add("@n", SqlDbType.Date).Value = a.Date;
                 DataTable tab = Filldb(cmd);
                 dataGridView1.DataSource = tab;
@@ -59,12 +58,6 @@ namespace DoAn
         {
             LoadData(comboBox1.SelectedValue.ToString());
         }
-
-        private void toTextButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void printButton_Click(object sender, EventArgs e)
         {
             PrintDialog printDlg = new PrintDialog();

@@ -34,21 +34,19 @@
             this.thayButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.doAnCuoiKiDataSet1 = new DoAn.DoAnCuoiKiDataSet1();
-            this.doAnCuoiKiDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doAnCuoiKiDataSet = new DoAn.DoAnCuoiKiDataSet();
+            this.doAnCuoiKiDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bangPhanCongBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bangPhanCongTableAdapter = new DoAn.DoAnCuoiKiDataSet1TableAdapters.BangPhanCongTableAdapter();
-            this.bangPhanCongBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1BindingSource)).BeginInit();
+            this.bangPhanCongTableAdapter = new DoAn.DoAnCuoiKiDataSetTableAdapters.BangPhanCongTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.bangPhanCongBindingSource;
-            this.comboBox1.DisplayMember = "ID";
+            this.comboBox1.DisplayMember = "Ten";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBox1.FormattingEnabled = true;
@@ -60,8 +58,8 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.bangPhanCongBindingSource1;
-            this.comboBox2.DisplayMember = "ID";
+            this.comboBox2.DataSource = this.bangPhanCongBindingSource;
+            this.comboBox2.DisplayMember = "Ten";
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBox2.FormattingEnabled = true;
@@ -102,29 +100,24 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "voi";
             // 
-            // doAnCuoiKiDataSet1
+            // doAnCuoiKiDataSet
             // 
-            this.doAnCuoiKiDataSet1.DataSetName = "DoAnCuoiKiDataSet1";
-            this.doAnCuoiKiDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.doAnCuoiKiDataSet.DataSetName = "DoAnCuoiKiDataSet";
+            this.doAnCuoiKiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // doAnCuoiKiDataSet1BindingSource
+            // doAnCuoiKiDataSetBindingSource
             // 
-            this.doAnCuoiKiDataSet1BindingSource.DataSource = this.doAnCuoiKiDataSet1;
-            this.doAnCuoiKiDataSet1BindingSource.Position = 0;
+            this.doAnCuoiKiDataSetBindingSource.DataSource = this.doAnCuoiKiDataSet;
+            this.doAnCuoiKiDataSetBindingSource.Position = 0;
             // 
             // bangPhanCongBindingSource
             // 
             this.bangPhanCongBindingSource.DataMember = "BangPhanCong";
-            this.bangPhanCongBindingSource.DataSource = this.doAnCuoiKiDataSet1BindingSource;
+            this.bangPhanCongBindingSource.DataSource = this.doAnCuoiKiDataSetBindingSource;
             // 
             // bangPhanCongTableAdapter
             // 
             this.bangPhanCongTableAdapter.ClearBeforeFill = true;
-            // 
-            // bangPhanCongBindingSource1
-            // 
-            this.bangPhanCongBindingSource1.DataMember = "BangPhanCong";
-            this.bangPhanCongBindingSource1.DataSource = this.doAnCuoiKiDataSet1BindingSource;
             // 
             // ThayDoiNhanVien
             // 
@@ -140,10 +133,9 @@
             this.Name = "ThayDoiNhanVien";
             this.Text = "ThayDoiNhanVien";
             this.Load += new System.EventHandler(this.ThayDoiNhanVien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangPhanCongBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,10 +148,9 @@
         private System.Windows.Forms.Button thayButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.BindingSource doAnCuoiKiDataSet1BindingSource;
-        private DoAnCuoiKiDataSet1 doAnCuoiKiDataSet1;
+        private System.Windows.Forms.BindingSource doAnCuoiKiDataSetBindingSource;
+        private DoAnCuoiKiDataSet doAnCuoiKiDataSet;
         private System.Windows.Forms.BindingSource bangPhanCongBindingSource;
-        private DoAnCuoiKiDataSet1TableAdapters.BangPhanCongTableAdapter bangPhanCongTableAdapter;
-        private System.Windows.Forms.BindingSource bangPhanCongBindingSource1;
+        private DoAnCuoiKiDataSetTableAdapters.BangPhanCongTableAdapter bangPhanCongTableAdapter;
     }
 }

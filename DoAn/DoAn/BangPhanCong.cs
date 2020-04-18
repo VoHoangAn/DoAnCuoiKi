@@ -19,12 +19,12 @@ namespace DoAn
         {
             InitializeComponent();
         }
-        NhanVien nv = new NhanVien();
-        BangPhanCong bpc = new BangPhanCong();
+        PhanCong pc = new PhanCong();
         private void BangPhanCong_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'doAnCuoiKiDataSet.BangPhanCong' table. You can move, or remove it, as needed.
+            this.bangPhanCongTableAdapter.Fill(this.doAnCuoiKiDataSet.BangPhanCong);
             // TODO: This line of code loads data into the 'doAnCuoiKiDataSet1.BangPhanCong' table. You can move, or remove it, as needed.
-            this.bangPhanCongTableAdapter.Fill(this.doAnCuoiKiDataSet1.BangPhanCong);
             cvallButton.Checked = true;
         }
 
@@ -55,7 +55,7 @@ namespace DoAn
 
             dataGridView1.ReadOnly = true;// nap lai du lieu len datagrid view
 
-            dataGridView1.DataSource = nv.getNhanVien(cmd);
+            dataGridView1.DataSource = pc.GetPhanCong(cmd);
 
             dataGridView1.AllowUserToAddRows = false;
         }
@@ -75,12 +75,6 @@ namespace DoAn
             td.AddComboBox(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             td.Show();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void refreshButton_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM BangPhanCong");

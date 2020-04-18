@@ -22,6 +22,7 @@ namespace DoAn
         private void updateButton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(idTextBox.Text);
+            string ho = hoTextBox.Text;
             string ten = tenTextBox.Text;
             string gt = "Nam";
             if (nuButton.Checked)
@@ -39,7 +40,7 @@ namespace DoAn
             else if (verif())
             {             
                     pictureBox1.Image.Save(pic, pictureBox1.Image.RawFormat);
-                    if (nv.EditNhanVien(id, ten, gt, ns, dc, cv, pic))
+                    if (nv.EditNhanVien(id,ho, ten, gt, ns, dc, cv, pic))
                     {
                         MessageBox.Show("Thay doi thanh cong", "Sua thong tin nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -63,7 +64,7 @@ namespace DoAn
         bool ID()
         {
             int id = int.Parse(idTextBox.Text);
-            SqlCommand cmd = new SqlCommand("SELECT MaNV,HoTen FROM NhanVien WHERE MaNV = " + id);
+            SqlCommand cmd = new SqlCommand("SELECT MaNV,Ten FROM NhanVien WHERE MaNV = " + id);
             DataTable tab = nv.getNhanVien(cmd);
             if (tab.Rows.Count > 0)
             {
@@ -87,6 +88,7 @@ namespace DoAn
                         MessageBox.Show("Xoa nhan vien thanh cong", "Xoa nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         tenTextBox.Text = "";
                         idTextBox.Text = "";
+                        hoTextBox.Text = "";
                         namButton.Checked = nuButton.Checked = false;
                         dateTimePicker1.Value = DateTime.Now;
                         dcTextBox.Text = "";
@@ -100,9 +102,9 @@ namespace DoAn
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ma nhan vien khong hop le", "Xoa nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Xoa nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -110,11 +112,12 @@ namespace DoAn
         private void findButton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(idTextBox.Text);          
-            SqlCommand cmd = new SqlCommand("SELECT MaNV,HoTen,GioiTinh,NgaySinh,DChi,ChucVu,Anh FROM NhanVien WHERE MaNV = " + id);
+            SqlCommand cmd = new SqlCommand("SELECT MaNV,Ho,Ten,GioiTinh,NgaySinh,DChi,ChucVu,Anh FROM NhanVien WHERE MaNV = " + id);
             DataTable tab = nv.getNhanVien(cmd);
             if( tab.Rows.Count >0)
             {
-                tenTextBox.Text = tab.Rows[0]["HoTen"].ToString();
+                tenTextBox.Text = tab.Rows[0]["Ten"].ToString();
+                hoTextBox.Text = tab.Rows[0]["Ho"].ToString();
                 if (tab.Rows[0]["GioiTinh"].ToString() == "Nam       ")
                 {
                     namButton.Checked = true;
