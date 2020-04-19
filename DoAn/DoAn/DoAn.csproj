@@ -33,8 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.1\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,22 +65,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DoAnCuoiKiDataSet1.Designer.cs">
+    <Compile Include="DoAnCuoiKiDataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
+      <DependentUpon>DoAnCuoiKiDataSet11.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DoAnCuoiKiDataSet21.Designer.cs">
+    <Compile Include="DoAnCuoiKiDataSet31.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
+      <DependentUpon>DoAnCuoiKiDataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DoAnCuoiKiDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoAnCuoiKiDataSet4.xsd</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
-    <Compile Include="LaoCongForm.cs">
+    <Compile Include="InDanhSachNhanVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LaoCongForm.Designer.cs">
-      <DependentUpon>LaoCongForm.cs</DependentUpon>
+    <Compile Include="InDanhSachNhanVienForm.Designer.cs">
+      <DependentUpon>InDanhSachNhanVienForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -93,6 +106,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="My_DB.cs" />
+    <Compile Include="PhanCong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NhanVien.cs" />
@@ -102,11 +116,29 @@
     <Compile Include="QuanLiNhanVienForm.Designer.cs">
       <DependentUpon>QuanLiNhanVienForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThayDoiNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThayDoiNhanVien.Designer.cs">
+      <DependentUpon>ThayDoiNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="TiepTanForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TiepTanForm.Designer.cs">
       <DependentUpon>TiepTanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCaLam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateCaLam.Designer.cs">
+      <DependentUpon>UpdateCaLam.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateDeleteNhanVienForm.cs">
       <SubType>Form</SubType>
@@ -116,9 +148,6 @@
     </Compile>
     <EmbeddedResource Include="BangPhanCong.resx">
       <DependentUpon>BangPhanCong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LaoCongForm.resx">
-      <DependentUpon>LaoCongForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -137,9 +166,22 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QuanLiNhanVienForm.resx">
       <DependentUpon>QuanLiNhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThayDoiNhanVien.resx">
+      <DependentUpon>ThayDoiNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiepTanForm.resx">
+      <DependentUpon>TiepTanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCaLam.resx">
+      <DependentUpon>UpdateCaLam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateDeleteNhanVienForm.resx">
       <DependentUpon>UpdateDeleteNhanVienForm.cs</DependentUpon>
@@ -155,28 +197,40 @@
     <None Include="DoAnCuoiKiDataSet.xss">
       <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DoAnCuoiKiDataSet1.xsc">
-      <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
+    <None Include="DoAnCuoiKiDataSet11.xsc">
+      <DependentUpon>DoAnCuoiKiDataSet11.xsd</DependentUpon>
     </None>
-    <None Include="DoAnCuoiKiDataSet1.xsd">
+    <None Include="DoAnCuoiKiDataSet11.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DoAnCuoiKiDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DoAnCuoiKiDataSet11.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DoAnCuoiKiDataSet1.xss">
-      <DependentUpon>DoAnCuoiKiDataSet1.xsd</DependentUpon>
+    <None Include="DoAnCuoiKiDataSet11.xss">
+      <DependentUpon>DoAnCuoiKiDataSet11.xsd</DependentUpon>
     </None>
-    <None Include="DoAnCuoiKiDataSet21.xsc">
-      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
+    <None Include="DoAnCuoiKiDataSet31.xsc">
+      <DependentUpon>DoAnCuoiKiDataSet31.xsd</DependentUpon>
     </None>
-    <None Include="DoAnCuoiKiDataSet21.xsd">
+    <None Include="DoAnCuoiKiDataSet31.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DoAnCuoiKiDataSet21.Designer.cs</LastGenOutput>
+      <LastGenOutput>DoAnCuoiKiDataSet31.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DoAnCuoiKiDataSet21.xss">
-      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
+    <None Include="DoAnCuoiKiDataSet31.xss">
+      <DependentUpon>DoAnCuoiKiDataSet31.xsd</DependentUpon>
     </None>
+    <None Include="DoAnCuoiKiDataSet4.xsc">
+      <DependentUpon>DoAnCuoiKiDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoAnCuoiKiDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoAnCuoiKiDataSet4.xss">
+      <DependentUpon>DoAnCuoiKiDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -190,8 +244,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="QuanLi\" />
+    <Content Include="pictu\Addnv.png" />
+    <Content Include="pictu\addnv..ico" />
+    <Content Include="pictu\nam.jpg" />
+    <Content Include="pictu\nu.jpg" />
+    <Content Include="pictu\wc1.gif" />
+    <Content Include="pictu\wc2.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

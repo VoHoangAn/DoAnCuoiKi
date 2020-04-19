@@ -13,5 +13,16 @@ namespace DoAn
         {
             ID = userID;
         }
+        public static DateTime dtlogin { get; private set; }
+        public static void setdtLogin(DateTime dt)
+        {
+            dtlogin = dt;
+        }
+        public static Double LuongNgay { get; private set; }
+        public static void setLuongNgay(double ln)
+        {
+            LuongNgay = ln;
+        }
+
     }
 }

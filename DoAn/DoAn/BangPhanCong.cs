@@ -19,11 +19,12 @@ namespace DoAn
         {
             InitializeComponent();
         }
-        NhanVien nv = new NhanVien();
+        PhanCong pc = new PhanCong();
         private void BangPhanCong_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'doAnCuoiKiDataSet.BangPhanCong' table. You can move, or remove it, as needed.
+            this.bangPhanCongTableAdapter.Fill(this.doAnCuoiKiDataSet.BangPhanCong);
             // TODO: This line of code loads data into the 'doAnCuoiKiDataSet1.BangPhanCong' table. You can move, or remove it, as needed.
-            this.bangPhanCongTableAdapter.Fill(this.doAnCuoiKiDataSet1.BangPhanCong);
             cvallButton.Checked = true;
         }
 
@@ -32,11 +33,11 @@ namespace DoAn
             string cv = "*";
             SqlCommand cmd = new SqlCommand();
             if (qlButton.Checked == true)
-                cv = "QL";
+                cv = "Quan Li";
             if (ttButton.Checked == true)
-                cv = "TT";
+                cv = "Tiep Tan";
             if (lcButton.Checked == true)
-                cv = "LC";
+                cv = "Lao Cong";
             if (cvallButton.Checked == true)
             {
                 cmd.CommandText = "SELECT * FROM BangPhanCong";
@@ -54,7 +55,7 @@ namespace DoAn
 
             dataGridView1.ReadOnly = true;// nap lai du lieu len datagrid view
 
-            dataGridView1.DataSource = nv.getNhanVien(cmd);
+            dataGridView1.DataSource = pc.GetPhanCong(cmd);
 
             dataGridView1.AllowUserToAddRows = false;
         }
@@ -67,6 +68,17 @@ namespace DoAn
             printDlg.AllowSelection = true;
             printDlg.AllowSomePages = true;
             if (printDlg.ShowDialog() == DialogResult.OK) printDoc.Print();
+        }
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            ThayDoiNhanVien td = new ThayDoiNhanVien();
+            td.AddComboBox(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            td.Show();
+        }
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM BangPhanCong");
+            LoadData(cmd);
         }
     }
 }
