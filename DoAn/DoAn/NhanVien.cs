@@ -98,9 +98,10 @@ namespace DoAn
             SqlCommand cmd = new SqlCommand("SELECT * FROM NhanVien WHERE MaNV = " + MaNV, mydb.getConnection);
             DataTable tab = getNhanVien(cmd);
             TimeSpan a = d2 - d1;
-            SqlCommand cmd2 = new SqlCommand("INSERT INTO Log(MaNV,Ten,Ngay,Checkin,Checkout,ThoiGianLam,Them,Thieu,LuongNgay)" + "VALUES(@manv,@ten,@ngay,@in,@out,@tg,@them,@thieu,@ln)", mydb.getConnection);
+            SqlCommand cmd2 = new SqlCommand("INSERT INTO Log(MaNV,Ten,ChucVu,Ngay,Checkin,Checkout,ThoiGianLam,Them,Thieu,LuongNgay)" + "VALUES(@manv,@ten,@cv,@ngay,@in,@out,@tg,@them,@thieu,@ln)", mydb.getConnection);
             cmd2.Parameters.Add("@manv", SqlDbType.Int).Value = MaNV;
             cmd2.Parameters.Add("@ten", SqlDbType.VarChar).Value = tab.Rows[0]["Ten"].ToString();
+            cmd2.Parameters.Add("@cv", SqlDbType.VarChar).Value = tab.Rows[0]["ChucVu"].ToString();
             cmd2.Parameters.Add("@ngay", SqlDbType.Date).Value = d1.Date ;
             cmd2.Parameters.Add("@in", SqlDbType.VarChar).Value = d1.ToShortTimeString();
             cmd2.Parameters.Add("@out", SqlDbType.VarChar).Value = d2.ToShortTimeString();

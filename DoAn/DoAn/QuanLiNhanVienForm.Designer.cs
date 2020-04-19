@@ -651,7 +651,6 @@
         private System.Windows.Forms.BindingSource nhanVienBindingSource3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox hoTextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoDataGridViewTextBoxColumn;
