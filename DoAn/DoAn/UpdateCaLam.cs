@@ -126,6 +126,7 @@ namespace DoAn
         {
             pc.UpBangTamThoiThanhChinhThuc();
             MessageBox.Show("Thanh cong", "Up", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadData();
         }
     }
 }

@@ -33,11 +33,11 @@ namespace DoAn
             string cv = "*";
             SqlCommand cmd = new SqlCommand();
             if (qlButton.Checked == true)
-                cv = "QL";
+                cv = "Quan Li";
             if (ttButton.Checked == true)
-                cv = "TT";
+                cv = "Tiep Tan";
             if (lcButton.Checked == true)
-                cv = "LC";
+                cv = "Lao Cong";
             if (cvallButton.Checked == true)
             {
                 cmd.CommandText = "SELECT * FROM BangPhanCong";

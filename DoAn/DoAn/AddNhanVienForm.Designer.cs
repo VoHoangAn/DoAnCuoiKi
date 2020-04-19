@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNhanVienForm));
             this.cvComboBox = new System.Windows.Forms.ComboBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -274,6 +275,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.cancelButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddNhanVienForm";
             this.Text = "AddNhanVienForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

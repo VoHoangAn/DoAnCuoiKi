@@ -33,15 +33,15 @@ namespace DoAn
             int mapc1 = 0;
             int mapc2 = 0;
             if (comboBox1.Text == null || comboBox2.Text == null)
-                MessageBox.Show("Chon nhan vien de thay doi", "Doi nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Chon nhan vien de thay doi", "Doi nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             SqlCommand cmd = new SqlCommand("SELECT * FROM BangPhanCong WHERE ID = @id", mydb.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = comboBox1.Text;
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(comboBox1.SelectedValue);
             DataTable tab = nv.getNhanVien(cmd);
             ten1 = tab.Rows[0]["Ten"].ToString();
             mapc1 = Convert.ToInt32(tab.Rows[0]["MaPhanCong"].ToString());
             cmd.CommandText = "SELECT * FROM BangPhanCong WHERE ChucVu = @cv AND ID = @id2";
-            cmd.Parameters.Add("@cv", SqlDbType.VarChar).Value = tab.Rows[0]["ChucVu"].ToString();
-            cmd.Parameters.Add("@id2", SqlDbType.Int).Value = comboBox2.Text;
+            cmd.Parameters.Add("@cv", SqlDbType.VarChar).Value = tab.Rows[0]["ChucVu"];
+            cmd.Parameters.Add("@id2", SqlDbType.Int).Value = Convert.ToInt32(comboBox2.SelectedValue);
             DataTable tab2 = nv.getNhanVien(cmd);    
             if(tab2.Rows.Count > 0)
             {
@@ -53,7 +53,7 @@ namespace DoAn
                 }
                 else
                 {
-                    SwapPhanCongNhanVien(Convert.ToInt32(comboBox1.Text), ten1, Convert.ToInt32(comboBox2.Text), ten2, mapc1, mapc2);
+                    SwapPhanCongNhanVien(Convert.ToInt32(comboBox1.SelectedValue), ten1, Convert.ToInt32(comboBox2.SelectedValue), ten2, mapc1, mapc2);
                     MessageBox.Show("Thay doi thanh cong", "Doi nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
@@ -72,6 +72,11 @@ namespace DoAn
         public void AddComboBox(string id)
         {
             comboBox1.Text = id;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

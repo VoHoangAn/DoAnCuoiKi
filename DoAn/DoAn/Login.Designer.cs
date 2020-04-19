@@ -120,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(439, 215);
+            this.ClientSize = new System.Drawing.Size(439, 211);
             this.Controls.Add(this.tieptanButton);
             this.Controls.Add(this.quanliButton);
             this.Controls.Add(this.label2);

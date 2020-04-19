@@ -166,6 +166,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QuanLiNhanVienForm.resx">
       <DependentUpon>QuanLiNhanVienForm.cs</DependentUpon>
@@ -244,5 +245,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="pictu\Addnv.png" />
+    <Content Include="pictu\addnv..ico" />
+    <Content Include="pictu\nam.jpg" />
+    <Content Include="pictu\nu.jpg" />
+    <Content Include="pictu\wc1.gif" />
+    <Content Include="pictu\wc2.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

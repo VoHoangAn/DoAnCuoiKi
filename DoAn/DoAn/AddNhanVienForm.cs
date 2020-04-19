@@ -73,6 +73,7 @@ namespace DoAn
                         if (nv.InsertNhanVien(id,ho,ten,gt,ns,dc,cv,Luongcb, pic))
                         {
                             MessageBox.Show("Them nhan vien thanh cong", "Them Nhan Vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
                         }
                         else
                         {

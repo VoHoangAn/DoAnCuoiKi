@@ -170,7 +170,7 @@ namespace DoAn
 
             dataGridView1.DataSource = nv.getNhanVien(cmd);
 
-            picCol = (DataGridViewImageColumn)dataGridView1.Columns[7];
+            picCol = (DataGridViewImageColumn)dataGridView1.Columns[9];
 
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
 
