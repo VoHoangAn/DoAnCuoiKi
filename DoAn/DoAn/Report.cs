@@ -23,12 +23,13 @@ namespace DoAn
         My_DB mydb = new My_DB();
         private void Report_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd =new SqlCommand("SELECT DISTINCT Ngay FROM Log");
+            // TODO: This line of code loads data into the 'doAnCuoiKiDataSet2.Log' table. You can move, or remove it, as needed.
+            this.logTableAdapter1.Fill(this.doAnCuoiKiDataSet2.Log);
+            SqlCommand cmd =new SqlCommand("SELECT Ngay FROM Log GROUP BY Ngay ORDER BY MAX(id) DESC");
             DataTable tab = new DataTable();
             tab = Filldb(cmd);
             comboBox1.DataSource = tab;
             comboBox1.DisplayMember = "Ngay";
-            comboBox1.ValueMember = "Ngay";
             LoadData(comboBox1.Text);
         }
         private DataTable Filldb(SqlCommand cmd)
@@ -45,7 +46,7 @@ namespace DoAn
             {
                 comboBox1.ValueMember = "Ngay";
                 DateTime a = Convert.ToDateTime(comboBox1.Text);
-                SqlCommand cmd = new SqlCommand("SELECT MaNV,Ten,Checkin,Checkout,Them,Thieu,Luongngay FROM Log WHERE Ngay = @n ");
+                SqlCommand cmd = new SqlCommand("SELECT MaNV,Ten,ChucVu,Checkin,Checkout,ThoiGianLam,Them,Thieu,Luongngay FROM Log WHERE Ngay = @n ");
                 cmd.Parameters.Add("@n", SqlDbType.Date).Value = a.Date;
                 DataTable tab = Filldb(cmd);
                 dataGridView1.DataSource = tab;
@@ -68,6 +69,11 @@ namespace DoAn
             printDlg.AllowSomePages = true;
 
             if (printDlg.ShowDialog() == DialogResult.OK) printDoc.Print();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

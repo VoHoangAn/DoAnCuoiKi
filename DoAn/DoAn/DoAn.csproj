@@ -70,10 +70,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DoAnCuoiKiDataSet11.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DoAnCuoiKiDataSet31.Designer.cs">
+    <Compile Include="DoAnCuoiKiDataSet21.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DoAnCuoiKiDataSet31.xsd</DependentUpon>
+      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
     </Compile>
     <Compile Include="DoAnCuoiKiDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -208,16 +208,16 @@
     <None Include="DoAnCuoiKiDataSet11.xss">
       <DependentUpon>DoAnCuoiKiDataSet11.xsd</DependentUpon>
     </None>
-    <None Include="DoAnCuoiKiDataSet31.xsc">
-      <DependentUpon>DoAnCuoiKiDataSet31.xsd</DependentUpon>
+    <None Include="DoAnCuoiKiDataSet21.xsc">
+      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
     </None>
-    <None Include="DoAnCuoiKiDataSet31.xsd">
+    <None Include="DoAnCuoiKiDataSet21.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DoAnCuoiKiDataSet31.Designer.cs</LastGenOutput>
+      <LastGenOutput>DoAnCuoiKiDataSet21.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DoAnCuoiKiDataSet31.xss">
-      <DependentUpon>DoAnCuoiKiDataSet31.xsd</DependentUpon>
+    <None Include="DoAnCuoiKiDataSet21.xss">
+      <DependentUpon>DoAnCuoiKiDataSet21.xsd</DependentUpon>
     </None>
     <None Include="DoAnCuoiKiDataSet4.xsc">
       <DependentUpon>DoAnCuoiKiDataSet4.xsd</DependentUpon>
