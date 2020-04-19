@@ -16,6 +16,7 @@ namespace DoAn
         {
             InitializeComponent();
         }
+        NhanVien nv = new NhanVien();
 
         private void themNhanVienToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -51,6 +52,12 @@ namespace DoAn
         {
             Report rp = new Report();
             rp.Show();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DateTime d = DateTime.Now;
+            nv.UpdateLog(Globals.ID, d);
         }
     }
 }
