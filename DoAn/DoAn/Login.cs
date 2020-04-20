@@ -40,12 +40,29 @@ namespace DoAn
                 {
                     a = "Tiep tan";
                     cvForm = new TiepTanForm();
+
                 }
                 int userid = Convert.ToInt16(table.Rows[0]["ID"].ToString());
                 Globals.SetID(userid);
                 if (CheckChucVu(a))
                 {
                     cv = a;
+
+                    //Nếu là tiếp tân thì checkin và lưu lại vào Log
+                    if(cv=="Tiep tan")
+                    {
+                        NhanVien nv = new NhanVien();
+
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM NhanVien WHERE MaNV=" 
+                            + Globals.ID.ToString());
+
+                        DataTable dataTable= nv.getNhanVien(cmd);
+
+                        string hoUser = dataTable.Rows[0].Field<string>("Ho").Trim();
+                        string tenUser = dataTable.Rows[0].Field<string>("Ten").Trim();
+                        string hoTen = hoUser + " " + tenUser;
+                        nv.CheckInAndSaveToLog(Globals.ID, hoTen, cv);
+                    }
                     this.DialogResult = DialogResult.OK;
                 }
                 else

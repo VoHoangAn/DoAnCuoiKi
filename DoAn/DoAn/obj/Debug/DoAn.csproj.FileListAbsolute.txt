@@ -21,3 +21,27 @@ C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.cspr
 C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
 C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.Report.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.BangPhanCong.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.LoginForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.AddNhanVienForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.MainForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.Properties.Resources.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.QuanLiNhanVienForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.Report.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.ThayDoiNhanVien.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.TiepTanForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.UpdateCaLam.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.UpdateDeleteNhanVienForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.exe
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.pdb
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\bin\Debug\DoAn.exe.config
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\bin\Debug\DoAn.exe
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\bin\Debug\DoAn.pdb
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.QuanLiLaoCong.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.csproj.CopyComplete

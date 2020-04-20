@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.IO;
 using System.Data;
+using System.Globalization;
 
 namespace DoAn
 {
@@ -21,9 +22,9 @@ namespace DoAn
             adp.Fill(table);
             return table;
         }
-        public bool InsertNhanVien(int MaNV,string ho,string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu,int LuongCB, MemoryStream pic)
+        public bool InsertNhanVien(int MaNV, string ho, string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, int LuongCB, MemoryStream pic)
         {
-            pc.InsertFromNhanVienToBangPhanCong(MaNV,Ten, ChucVu);
+            pc.InsertFromNhanVienToBangPhanCong(MaNV, Ten, ChucVu);
             SqlCommand cmd = new SqlCommand("INSERT INTO NhanVien(MaNV,Ho,Ten,GioiTinh,NgaySinh,DChi,ChucVu,Anh)" + "VALUES(@id,@ho,@ten,@gt,@ns,@dc,@cv,@pic)", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = MaNV;
             cmd.Parameters.Add("@ho", SqlDbType.VarChar).Value = ho;
@@ -48,7 +49,7 @@ namespace DoAn
 
         }
 
-        public bool EditNhanVien(int MaNV,string ho, string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, MemoryStream pic)
+        public bool EditNhanVien(int MaNV, string ho, string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, MemoryStream pic)
         {
             pc.UpdateFromNhanVienToBangPhanCong(MaNV, Ten, ChucVu);
             SqlCommand cmd = new SqlCommand("UPDATE NhanVien SET Ho=@ho,Ten=@ten,GioiTinh=@gt,NgaySinh=@ns,DChi=@dc,ChucVu=@cv,Anh=@pic WHERE MaNV = @id", mydb.getConnection);
@@ -102,7 +103,7 @@ namespace DoAn
             cmd2.Parameters.Add("@manv", SqlDbType.Int).Value = MaNV;
             cmd2.Parameters.Add("@ten", SqlDbType.VarChar).Value = tab.Rows[0]["Ten"].ToString();
             cmd2.Parameters.Add("@cv", SqlDbType.VarChar).Value = tab.Rows[0]["ChucVu"].ToString();
-            cmd2.Parameters.Add("@ngay", SqlDbType.Date).Value = d1.Date ;
+            cmd2.Parameters.Add("@ngay", SqlDbType.Date).Value = d1.Date;
             cmd2.Parameters.Add("@in", SqlDbType.VarChar).Value = d1.ToShortTimeString();
             cmd2.Parameters.Add("@out", SqlDbType.VarChar).Value = d2.ToShortTimeString();
             cmd2.Parameters.Add("@tg", SqlDbType.Int).Value = a.TotalHours;
@@ -114,7 +115,7 @@ namespace DoAn
                 cmd2.Parameters.Add("@thieu", SqlDbType.Int).Value = 0;
             }
 
-            else if (a.TotalHours < 7 )
+            else if (a.TotalHours < 7)
             {
                 cmd2.Parameters.Add("@them", SqlDbType.Int).Value = 0;
                 cmd2.Parameters.Add("@thieu", SqlDbType.Int).Value = 8 - a.TotalHours;
@@ -140,6 +141,149 @@ namespace DoAn
 
         }
 
-        
+
+
+        //Xu li Log cua An
+        public bool CheckInAndSaveToLog(int maNV, string hoTen, string chucVu)
+        {
+            string ngayHomNay = DateTime.Now.ToShortDateString();
+
+            string checkInTime = DateTime.Now.ToShortTimeString();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO Log (MaNV, Ten, ChucVu, Ngay, Checkin) VALUES " +
+                "(@manv, @hoten, @chucvu, @ngay, @checkin)", mydb.getConnection);
+            cmd.Parameters.Add("@manv", SqlDbType.Int).Value = maNV;
+            cmd.Parameters.Add("@hoten", SqlDbType.Text).Value = hoTen;
+            cmd.Parameters.Add("@chucvu", SqlDbType.NChar).Value = chucVu;
+            cmd.Parameters.Add("@ngay", SqlDbType.Date).Value = ngayHomNay;
+            cmd.Parameters.Add("@checkin", SqlDbType.Text).Value = checkInTime;
+           
+
+            mydb.openConnection();
+
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+
+        public DataTable GetTableFromLogByMaNV(int maNV)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Log WHERE MaNV=@manv", mydb.getConnection);
+
+            cmd.Parameters.Add("@manv", SqlDbType.Int).Value = maNV;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+            DataTable dataTable = new DataTable();
+
+            adapter.Fill(dataTable);
+
+            return dataTable;
+
+        }
+        public bool CheckOutAndSaveLog(int maNV)
+        {
+            DataTable dataTable = GetTableFromLogByMaNV(maNV);
+
+            //Tìm dòng trong table có checkin nhưng chưa checkout để điền vào
+            int dongCanTimDeCheckOut = 0;
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                string checkOutInRowHasSameMaNV = dataTable.Rows[i].Field<string>("Checkout");
+                int id = Convert.ToInt32(dataTable.Rows[i].Field<Int32>("MaNV"));
+
+                if (checkOutInRowHasSameMaNV == null && id == maNV)
+                {
+                    dongCanTimDeCheckOut = i;
+                    break;
+                }
+            }
+            string timeCheckIn = dataTable.Rows[dongCanTimDeCheckOut].Field<string>("Checkin");
+            string dateCheckIn = dataTable.Rows[dongCanTimDeCheckOut].Field<DateTime>("Ngay").ToShortDateString();
+
+            string stringThoiGianCheckIn = dateCheckIn + " " + timeCheckIn;
+
+            DateTime thoiGianCheckIn = DateTime.ParseExact(stringThoiGianCheckIn, "dd/MM/yyyy HH:mm",
+                CultureInfo.InvariantCulture);
+
+            DateTime thoiGianHienTai = DateTime.Now;
+            int thoiGianLamViec = (int)(thoiGianHienTai - thoiGianCheckIn).TotalHours;
+
+            int thoiGianLamThem = 0;
+            int thoiGianLamThieu = 0;
+
+            if (thoiGianLamViec <= 7)
+                thoiGianLamThieu = 8 - thoiGianLamViec;
+            else
+                thoiGianLamThem = thoiGianLamViec - 8;
+
+            SqlCommand cmd = new SqlCommand("UPDATE Log SET Checkout=@checkout, ThoiGianLam=@thoigianlam, Them=@thoiGianLamThem, " +
+                "Thieu=@thoiGianLamThieu WHERE MaNV=@manv AND CONVERT(VARCHAR,Checkin)=@checkin", mydb.getConnection);
+
+            cmd.Parameters.Add("@checkout", SqlDbType.Text).Value = thoiGianHienTai.ToShortTimeString();
+            cmd.Parameters.Add("@thoigianlam", SqlDbType.Int).Value = thoiGianLamViec;
+            cmd.Parameters.Add("@manv", SqlDbType.Int).Value = maNV;
+            cmd.Parameters.Add("@thoiGianLamThem", SqlDbType.Int).Value = thoiGianLamThem;
+            cmd.Parameters.Add("@thoiGianLamThieu", SqlDbType.Int).Value = thoiGianLamThieu;
+            cmd.Parameters.Add("@checkin", SqlDbType.VarChar).Value = timeCheckIn;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+
+        //DataTable QuanLiLaoCong
+        public bool InsertIntoQuanLiLaoCong(int id, string hoTen)
+        {
+            string thoiGianLamViec = DateTime.Now.ToShortTimeString();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO QuanLiLaoCong (Id, HoTen, ThoiGianLamViec) " +
+                "VALUES (@id, @hoten, @thoigian)", mydb.getConnection);
+
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@hoten", SqlDbType.NChar).Value = hoTen;
+            cmd.Parameters.Add("@thoigian", SqlDbType.NChar).Value = thoiGianLamViec;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        public bool DeleteQuanLiLaoCong(int id)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM QuanLiLaoCong WHERE Id=@id", mydb.getConnection);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+
+        }
     }
 }

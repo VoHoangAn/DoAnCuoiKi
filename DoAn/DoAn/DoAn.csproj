@@ -80,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DoAnCuoiKiDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DoAnCuoiKiDataSetQLLC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoAnCuoiKiDataSetQLLC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="InDanhSachNhanVienForm.cs">
       <SubType>Form</SubType>
@@ -110,6 +115,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="TiepTan\QuanLiLaoCongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TiepTan\QuanLiLaoCongForm.Designer.cs">
+      <DependentUpon>QuanLiLaoCongForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLiNhanVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,10 +139,10 @@
     <Compile Include="ThayDoiNhanVien.Designer.cs">
       <DependentUpon>ThayDoiNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="TiepTanForm.cs">
+    <Compile Include="TiepTan\TiepTanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TiepTanForm.Designer.cs">
+    <Compile Include="TiepTan\TiepTanForm.Designer.cs">
       <DependentUpon>TiepTanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateCaLam.cs">
@@ -168,6 +179,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TiepTan\QuanLiLaoCongForm.resx">
+      <DependentUpon>QuanLiLaoCongForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLiNhanVienForm.resx">
       <DependentUpon>QuanLiNhanVienForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,7 +191,7 @@
     <EmbeddedResource Include="ThayDoiNhanVien.resx">
       <DependentUpon>ThayDoiNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TiepTanForm.resx">
+    <EmbeddedResource Include="TiepTan\TiepTanForm.resx">
       <DependentUpon>TiepTanForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateCaLam.resx">
@@ -229,6 +243,17 @@
     </None>
     <None Include="DoAnCuoiKiDataSet4.xss">
       <DependentUpon>DoAnCuoiKiDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSetQLLC.xsc">
+      <DependentUpon>DoAnCuoiKiDataSetQLLC.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSetQLLC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoAnCuoiKiDataSetQLLC.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoAnCuoiKiDataSetQLLC.xss">
+      <DependentUpon>DoAnCuoiKiDataSetQLLC.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
