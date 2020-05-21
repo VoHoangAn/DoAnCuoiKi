@@ -34,6 +34,7 @@ namespace DoAn
                 return true;
             }
         }
+
         private void addButton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(idTextBox.Text);
@@ -83,9 +84,11 @@ namespace DoAn
             }
 
         }
+
         bool verif()
         {
-            if ((hoTextBox.Text.Trim() == "")||(tenTextBox.Text.Trim() == "") || (dcTextBox.Text.Trim() == "") || idTextBox.Text.Trim() == "" || cvComboBox.Text.Trim() == "" || pictureBox1.Image == null)
+            if ((hoTextBox.Text.Trim() == "")||(tenTextBox.Text.Trim() == "") || (dcTextBox.Text.Trim() == "") || idTextBox.Text.Trim() == "" || 
+                cvComboBox.Text.Trim() == "" || pictureBox1.Image == null)
             {
                 return false;
             }

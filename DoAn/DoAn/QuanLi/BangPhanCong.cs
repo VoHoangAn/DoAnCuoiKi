@@ -50,6 +50,7 @@ namespace DoAn
                 LoadData(cmd);
             }
         }
+
         private void LoadData(SqlCommand cmd)
         {
 
@@ -59,6 +60,7 @@ namespace DoAn
 
             dataGridView1.AllowUserToAddRows = false;
         }
+
         private void printButton_Click(object sender, EventArgs e)
         {
             PrintDialog printDlg = new PrintDialog();
@@ -69,12 +71,14 @@ namespace DoAn
             printDlg.AllowSomePages = true;
             if (printDlg.ShowDialog() == DialogResult.OK) printDoc.Print();
         }
+
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             ThayDoiNhanVien td = new ThayDoiNhanVien();
             td.AddComboBox(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             td.Show();
         }
+
         private void refreshButton_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM BangPhanCong");

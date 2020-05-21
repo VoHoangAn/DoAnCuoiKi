@@ -92,6 +92,7 @@ namespace DoAn
                 MessageBox.Show("Con o de trong", "Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         bool verif()
         {
             if (idComboBox.Text.Trim() == "" || tenComboBox.Text.Trim() == "")
@@ -108,6 +109,7 @@ namespace DoAn
                 MessageBox.Show("Thay doi thanh cong", "Reset bang phan ca", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
         private void LoadData()
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM BangChiaCaTamThoi");

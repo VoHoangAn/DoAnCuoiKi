@@ -22,10 +22,13 @@ namespace DoAn
             adp.Fill(table);
             return table;
         }
-        public bool InsertNhanVien(int MaNV, string ho, string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, int LuongCB, MemoryStream pic)
+        public bool InsertNhanVien(int MaNV, string ho, string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, int LuongCB, 
+            MemoryStream pic)
         {
             pc.InsertFromNhanVienToBangPhanCong(MaNV, Ten, ChucVu);
-            SqlCommand cmd = new SqlCommand("INSERT INTO NhanVien(MaNV,Ho,Ten,GioiTinh,NgaySinh,DChi,ChucVu,Anh)" + "VALUES(@id,@ho,@ten,@gt,@ns,@dc,@cv,@pic)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO NhanVien(MaNV,Ho,Ten,GioiTinh,NgaySinh,DChi,ChucVu,Anh)" +
+                "VALUES(@id,@ho,@ten,@gt,@ns,@dc,@cv,@pic)", mydb.getConnection);
+
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = MaNV;
             cmd.Parameters.Add("@ho", SqlDbType.VarChar).Value = ho;
             cmd.Parameters.Add("@ten", SqlDbType.VarChar).Value = Ten;
@@ -35,7 +38,9 @@ namespace DoAn
             cmd.Parameters.Add("@dc", SqlDbType.VarChar).Value = DChi;
             cmd.Parameters.Add("@cv", SqlDbType.VarChar).Value = ChucVu;
             cmd.Parameters.Add("@pic", SqlDbType.Image).Value = pic.ToArray();
+
             mydb.openConnection();
+
             if (cmd.ExecuteNonQuery() == 1)
             {
                 mydb.closeConnection();
@@ -52,7 +57,9 @@ namespace DoAn
         public bool EditNhanVien(int MaNV, string ho, string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, MemoryStream pic)
         {
             pc.UpdateFromNhanVienToBangPhanCong(MaNV, Ten, ChucVu);
-            SqlCommand cmd = new SqlCommand("UPDATE NhanVien SET Ho=@ho,Ten=@ten,GioiTinh=@gt,NgaySinh=@ns,DChi=@dc,ChucVu=@cv,Anh=@pic WHERE MaNV = @id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("UPDATE NhanVien SET Ho=@ho,Ten=@ten,GioiTinh=@gt,NgaySinh=@ns,DChi=@dc,ChucVu=@cv,Anh=@pic WHERE MaNV = @id",
+                mydb.getConnection);
+
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = MaNV;
             cmd.Parameters.Add("@ho", SqlDbType.VarChar).Value = ho;
             cmd.Parameters.Add("@ten", SqlDbType.VarChar).Value = Ten;
@@ -61,7 +68,9 @@ namespace DoAn
             cmd.Parameters.Add("@dc", SqlDbType.VarChar).Value = DChi;
             cmd.Parameters.Add("@cv", SqlDbType.VarChar).Value = ChucVu;
             cmd.Parameters.Add("@pic", SqlDbType.Image).Value = pic.ToArray();
+
             mydb.openConnection();
+
             if (cmd.ExecuteNonQuery() == 1)
             {
                 mydb.closeConnection();
@@ -72,8 +81,6 @@ namespace DoAn
                 mydb.closeConnection();
                 return false;
             }
-
-
         }
         public bool DeleteNhanVien(int MaNV)
         {
@@ -147,7 +154,7 @@ namespace DoAn
         public bool CheckInAndSaveToLog(int maNV, string hoTen, string chucVu)
         {
             string ngayHomNay = DateTime.Now.ToShortDateString();
-
+       
             string checkInTime = DateTime.Now.ToShortTimeString();
 
             SqlCommand cmd = new SqlCommand("INSERT INTO Log (MaNV, Ten, ChucVu, Ngay, Checkin) VALUES " +
@@ -175,11 +182,9 @@ namespace DoAn
         public DataTable GetTableFromLogByMaNV(int maNV)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM Log WHERE MaNV=@manv", mydb.getConnection);
-
             cmd.Parameters.Add("@manv", SqlDbType.Int).Value = maNV;
 
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-
             DataTable dataTable = new DataTable();
 
             adapter.Fill(dataTable);

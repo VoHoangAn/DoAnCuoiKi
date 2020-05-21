@@ -37,5 +37,47 @@ namespace DoAn
                 Close();
             }
         }
+
+        private void TiepTanForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            base.OnClosing(e);
+
+            if (MessageBox.Show("Ban co chac muon dang xuat?", "Dang xuat", MessageBoxButtons.YesNo,
+               MessageBoxIcon.Asterisk) == DialogResult.No)
+            {
+                
+                e.Cancel = true;
+            }
+            else
+            {
+                NhanVien nv = new NhanVien();
+
+                nv.CheckOutAndSaveLog(Globals.ID);
+            }
+        }
+
+        private void tsmenuQuanLiPhongDaDat_Click(object sender, EventArgs e)
+        {
+            QuanLiPhongDaDatForm quanLiPhongDaDatForm = new QuanLiPhongDaDatForm();
+            quanLiPhongDaDatForm.StartPosition = FormStartPosition.CenterScreen;
+
+            quanLiPhongDaDatForm.Show();
+        }
+
+        private void tsmenuQuanLiPhong_Click(object sender, EventArgs e)
+        {
+            QuanLiPhongForm quanLiPhongForm = new QuanLiPhongForm();
+            quanLiPhongForm.StartPosition = FormStartPosition.CenterScreen;
+
+            quanLiPhongForm.Show();
+        }
+
+        private void tsmenuTimPhongTrong_Click(object sender, EventArgs e)
+        {
+            TimPhongTrongForm timPhongTrongForm = new TimPhongTrongForm("TiepTanForm");
+            timPhongTrongForm.StartPosition = FormStartPosition.CenterScreen;
+
+            timPhongTrongForm.Show();
+        }
     }
 }

@@ -18,7 +18,9 @@ namespace DoAn
         {
             InitializeComponent();
         }
+
         NhanVien nv = new NhanVien();
+
         private void updateButton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(idTextBox.Text);
@@ -50,9 +52,11 @@ namespace DoAn
                     }                
             }
         }
+
         bool verif()
         {
-            if ((tenTextBox.Text.Trim() == "") || (dcTextBox.Text.Trim() == "") || idTextBox.Text.Trim() == "" || cvComboBox.Text.Trim() == "" || pictureBox1.Image == null)
+            if ((tenTextBox.Text.Trim() == "") || (dcTextBox.Text.Trim() == "") || idTextBox.Text.Trim() == "" || cvComboBox.Text.Trim() == "" 
+                || pictureBox1.Image == null)
             {
                 return false;
             }
