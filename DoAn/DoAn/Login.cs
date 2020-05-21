@@ -32,6 +32,7 @@ namespace DoAn
             command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = passwordTextBox.Text;
             adapter.SelectCommand = command;
             adapter.Fill(table);
+
             if ((table.Rows.Count > 0))
             {
                 string a = "Quan Li";
@@ -40,7 +41,6 @@ namespace DoAn
                 {
                     a = "Tiep tan";
                     cvForm = new TiepTanForm();
-
                 }
                 int userid = Convert.ToInt16(table.Rows[0]["ID"].ToString());
                 Globals.SetID(userid);
@@ -76,10 +76,8 @@ namespace DoAn
             }
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+       
+
         bool CheckChucVu(string a)
         {
             SqlDataAdapter adp = new SqlDataAdapter();
@@ -98,6 +96,11 @@ namespace DoAn
                 return false;
             }
             
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

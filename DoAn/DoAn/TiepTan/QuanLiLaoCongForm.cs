@@ -18,7 +18,6 @@ namespace DoAn
             InitializeComponent();
 
             UpdateFont();
-
         }
 
         My_DB db = new My_DB();
@@ -32,6 +31,7 @@ namespace DoAn
             this.quanLiLaoCongTableAdapter.Fill(this.doAnCuoiKiDataSetQLLC.QuanLiLaoCong);
             // TODO: This line of code loads data into the 'doAnCuoiKiDataSet2.QuanLiLaoCong' table. You can move, or remove it, as needed.
             //          this.quanLiLaoCongTableAdapter1.Fill(this.doAnCuoiKiDataSet2.QuanLiLaoCong);
+            
             //Fill DataGridView bằng table QuanLiLaoCong
             SqlCommand cmdGetAllInQuanLiLaoCong = new SqlCommand("SELECT * FROM QuanLiLaoCong",
                 db.getConnection);
@@ -97,6 +97,7 @@ namespace DoAn
 
             RefreshDataGridView();
         }
+
         private bool KiemTraCheckIn2Lan()
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM QuanLiLaoCong");
@@ -111,15 +112,6 @@ namespace DoAn
             }
             return true;
 
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM Log WHERE MaNV=@id");
-            //cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
-            //DataTable dataTable = nv.getNhanVien(cmd);
-
-            ////Kiểm tra nếu Checkin còn trống thì có thể checkin, còn không thì checkin rồi trả về false
-            //if (dataTable.Rows[0]["Checkin"].ToString() == "")
-            //    return true;
-            //return false;
         }
 
         private void cbbChooseIDToCheckInOut_SelectedValueChanged(object sender, EventArgs e)

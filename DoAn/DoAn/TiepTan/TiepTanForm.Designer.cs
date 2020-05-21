@@ -31,7 +31,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmenuTinhNang = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmenuQuanLiLaoCong = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmenuTienThuTienChi = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmenuQuanLiPhongDaDat = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmenuQuanLiPhong = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmenuTimPhongTrong = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmenuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +53,9 @@
             // 
             this.tsmenuTinhNang.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmenuQuanLiLaoCong,
-            this.tsmenuTienThuTienChi});
+            this.tsmenuQuanLiPhongDaDat,
+            this.tsmenuQuanLiPhong,
+            this.tsmenuTimPhongTrong});
             this.tsmenuTinhNang.Name = "tsmenuTinhNang";
             this.tsmenuTinhNang.Size = new System.Drawing.Size(72, 20);
             this.tsmenuTinhNang.Text = "Tính năng";
@@ -59,15 +63,30 @@
             // tsmenuQuanLiLaoCong
             // 
             this.tsmenuQuanLiLaoCong.Name = "tsmenuQuanLiLaoCong";
-            this.tsmenuQuanLiLaoCong.Size = new System.Drawing.Size(163, 22);
+            this.tsmenuQuanLiLaoCong.Size = new System.Drawing.Size(186, 22);
             this.tsmenuQuanLiLaoCong.Text = "Quản lí lao công";
             this.tsmenuQuanLiLaoCong.Click += new System.EventHandler(this.tsmenuQuanLiLaoCong_Click);
             // 
-            // tsmenuTienThuTienChi
+            // tsmenuQuanLiPhongDaDat
             // 
-            this.tsmenuTienThuTienChi.Name = "tsmenuTienThuTienChi";
-            this.tsmenuTienThuTienChi.Size = new System.Drawing.Size(163, 22);
-            this.tsmenuTienThuTienChi.Text = "Tiền thu/Tiền chi";
+            this.tsmenuQuanLiPhongDaDat.Name = "tsmenuQuanLiPhongDaDat";
+            this.tsmenuQuanLiPhongDaDat.Size = new System.Drawing.Size(186, 22);
+            this.tsmenuQuanLiPhongDaDat.Text = "Quản lí phòng đã đặt";
+            this.tsmenuQuanLiPhongDaDat.Click += new System.EventHandler(this.tsmenuQuanLiPhongDaDat_Click);
+            // 
+            // tsmenuQuanLiPhong
+            // 
+            this.tsmenuQuanLiPhong.Name = "tsmenuQuanLiPhong";
+            this.tsmenuQuanLiPhong.Size = new System.Drawing.Size(186, 22);
+            this.tsmenuQuanLiPhong.Text = "Quản lí phòng";
+            this.tsmenuQuanLiPhong.Click += new System.EventHandler(this.tsmenuQuanLiPhong_Click);
+            // 
+            // tsmenuTimPhongTrong
+            // 
+            this.tsmenuTimPhongTrong.Name = "tsmenuTimPhongTrong";
+            this.tsmenuTimPhongTrong.Size = new System.Drawing.Size(186, 22);
+            this.tsmenuTimPhongTrong.Text = "Tìm phòng trống";
+            this.tsmenuTimPhongTrong.Click += new System.EventHandler(this.tsmenuTimPhongTrong_Click);
             // 
             // tsmenuDangXuat
             // 
@@ -85,7 +104,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TiepTanForm";
             this.Text = "TiepTanForm";
-//            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TiepTanForm_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TiepTanForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -98,7 +117,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmenuTinhNang;
         private System.Windows.Forms.ToolStripMenuItem tsmenuQuanLiLaoCong;
-        private System.Windows.Forms.ToolStripMenuItem tsmenuTienThuTienChi;
+        private System.Windows.Forms.ToolStripMenuItem tsmenuQuanLiPhongDaDat;
         private System.Windows.Forms.ToolStripMenuItem tsmenuDangXuat;
+        private System.Windows.Forms.ToolStripMenuItem tsmenuQuanLiPhong;
+        private System.Windows.Forms.ToolStripMenuItem tsmenuTimPhongTrong;
     }
 }

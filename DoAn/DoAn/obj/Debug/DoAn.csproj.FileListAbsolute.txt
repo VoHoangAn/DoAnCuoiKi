@@ -45,3 +45,11 @@ C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\bin\Debug\Microsoft.SqlServer.Ty
 C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.QuanLiLaoCong.resources
 C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.csproj.CopyComplete
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.QuanLiPhongForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.DSPhongForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.QuanLiPhongDaDatForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.GiaPhongForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.SuaGiaPhongForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.DatPhongForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.SuaVaXoaPhongDaDatForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.TimPhongTrongForm.resources
