@@ -26,9 +26,9 @@ namespace DoAn
         private void QuanLiLaoCong_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'doAnCuoiKiDataSetQLLC.QuanLiLaoCong' table. You can move, or remove it, as needed.
-            this.quanLiLaoCongTableAdapter.Fill(this.doAnCuoiKiDataSetQLLC.QuanLiLaoCong);
+       //     this.quanLiLaoCongTableAdapter.Fill(this.doAnCuoiKiDataSetQLLC.QuanLiLaoCong);
             // TODO: This line of code loads data into the 'doAnCuoiKiDataSetQLLC.QuanLiLaoCong' table. You can move, or remove it, as needed.
-            this.quanLiLaoCongTableAdapter.Fill(this.doAnCuoiKiDataSetQLLC.QuanLiLaoCong);
+         //   this.quanLiLaoCongTableAdapter.Fill(this.doAnCuoiKiDataSetQLLC.QuanLiLaoCong);
             // TODO: This line of code loads data into the 'doAnCuoiKiDataSet2.QuanLiLaoCong' table. You can move, or remove it, as needed.
             //          this.quanLiLaoCongTableAdapter1.Fill(this.doAnCuoiKiDataSet2.QuanLiLaoCong);
             

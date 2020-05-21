@@ -53,3 +53,12 @@ C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.SuaGiaPhongForm.r
 C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.DatPhongForm.resources
 C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.SuaVaXoaPhongDaDatForm.resources
 C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.TimPhongTrongForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.DatPhongForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.DSPhongForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.GiaPhongForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.SuaGiaPhongForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.QuanLiPhongDaDatForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.QuanLiPhongForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.SuaVaXoaPhongDaDatForm.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.QuanLiLaoCong.resources
+C:\Users\BIU RAIN\Desktop\WINFORMS\DoAn\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.TimPhongTrongForm.resources

@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoAnCuoiKiDataSetQLLC.cs">
+      <DependentUpon>DoAnCuoiKiDataSetQLLC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Phong\DatPhongForm.cs">
       <SubType>Form</SubType>
     </Compile>

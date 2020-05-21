@@ -9,7 +9,7 @@ namespace DoAn
 {
     class My_DB
     {
-        SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS; Initial Catalog = DoAnCuoiKi2; Integrated Security = True");
+        SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS; Initial Catalog = DoAnCuoiKi; Integrated Security = True");
         public SqlConnection getConnection
         {
             get
