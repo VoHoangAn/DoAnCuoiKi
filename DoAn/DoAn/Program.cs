@@ -16,9 +16,9 @@ namespace DoAn
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new LoginForm());
+            //Application.Run(new LoginForm());
             LoginForm log = new LoginForm();
-            if(log.ShowDialog() == DialogResult.OK)
+            if (log.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(log.cvForm);
             }

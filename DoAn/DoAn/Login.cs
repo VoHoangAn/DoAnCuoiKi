@@ -32,6 +32,7 @@ namespace DoAn
             command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = passwordTextBox.Text;
             adapter.SelectCommand = command;
             adapter.Fill(table);
+
             if ((table.Rows.Count > 0))
             {
                 string a = "Quan Li";
@@ -46,6 +47,22 @@ namespace DoAn
                 if (CheckChucVu(a))
                 {
                     cv = a;
+
+                    //Nếu là tiếp tân thì checkin và lưu lại vào Log
+                    if(cv=="Tiep tan")
+                    {
+                        NhanVien nv = new NhanVien();
+
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM NhanVien WHERE MaNV=" 
+                            + Globals.ID.ToString());
+
+                        DataTable dataTable= nv.getNhanVien(cmd);
+
+                        string hoUser = dataTable.Rows[0].Field<string>("Ho").Trim();
+                        string tenUser = dataTable.Rows[0].Field<string>("Ten").Trim();
+                        string hoTen = hoUser + " " + tenUser;
+                        nv.CheckInAndSaveToLog(Globals.ID, hoTen, cv);
+                    }
                     this.DialogResult = DialogResult.OK;
                 }
                 else
@@ -59,10 +76,8 @@ namespace DoAn
             }
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+       
+
         bool CheckChucVu(string a)
         {
             SqlDataAdapter adp = new SqlDataAdapter();
@@ -81,6 +96,11 @@ namespace DoAn
                 return false;
             }
             
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

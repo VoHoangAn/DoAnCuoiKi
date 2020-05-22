@@ -64,6 +64,7 @@ namespace DoAn
             }
 
         }
+
         private void SwapPhanCongNhanVien(int id1,string a,int id2,string b,int pc1,int pc2)
         {
             bpc.UpdateBangPhanCong(pc1,id2, b);

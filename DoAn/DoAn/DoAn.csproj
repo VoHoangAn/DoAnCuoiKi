@@ -54,10 +54,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BangPhanCong.cs">
+    <Compile Include="DoAnCuoiKiDataSetQLLC.cs">
+      <DependentUpon>DoAnCuoiKiDataSetQLLC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Phong\DatPhongForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BangPhanCong.Designer.cs">
+    <Compile Include="Phong\DatPhongForm.Designer.cs">
+      <DependentUpon>DatPhongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoAnCuoiKiDataSetDSPhong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoAnCuoiKiDataSetDSPhong.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DoAnCuoiKiDataSetGiaPhong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoAnCuoiKiDataSetGiaPhong.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Phong\DSPhongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phong\DSPhongForm.Designer.cs">
+      <DependentUpon>DSPhongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phong\GiaPhongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phong\GiaPhongForm.Designer.cs">
+      <DependentUpon>GiaPhongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phong\SuaGiaPhongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phong\SuaGiaPhongForm.Designer.cs">
+      <DependentUpon>SuaGiaPhongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phong\Phong.cs" />
+    <Compile Include="Phong\QuanLiPhongDaDatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phong\QuanLiPhongDaDatForm.Designer.cs">
+      <DependentUpon>QuanLiPhongDaDatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phong\QuanLiPhongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phong\QuanLiPhongForm.Designer.cs">
+      <DependentUpon>QuanLiPhongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLi\BangPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLi\BangPhanCong.Designer.cs">
       <DependentUpon>BangPhanCong.cs</DependentUpon>
     </Compile>
     <Compile Include="DoAnCuoiKiDataSet.Designer.cs">
@@ -80,11 +130,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DoAnCuoiKiDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DoAnCuoiKiDataSetQLLC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoAnCuoiKiDataSetQLLC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Globals.cs" />
-    <Compile Include="InDanhSachNhanVienForm.cs">
+    <Compile Include="QuanLi\InDanhSachNhanVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InDanhSachNhanVienForm.Designer.cs">
+    <Compile Include="QuanLi\InDanhSachNhanVienForm.Designer.cs">
       <DependentUpon>InDanhSachNhanVienForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -93,10 +148,10 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddNhanVienForm.cs">
+    <Compile Include="QuanLi\AddNhanVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNhanVienForm.Designer.cs">
+    <Compile Include="QuanLi\AddNhanVienForm.Designer.cs">
       <DependentUpon>AddNhanVienForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -106,53 +161,89 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="My_DB.cs" />
-    <Compile Include="PhanCong.cs" />
+    <Compile Include="QuanLi\PhanCong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NhanVien.cs" />
-    <Compile Include="QuanLiNhanVienForm.cs">
+    <Compile Include="QuanLi\NhanVien.cs" />
+    <Compile Include="Phong\SuaVaXoaPhongDaDatForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLiNhanVienForm.Designer.cs">
+    <Compile Include="Phong\SuaVaXoaPhongDaDatForm.Designer.cs">
+      <DependentUpon>SuaVaXoaPhongDaDatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TiepTan\QuanLiLaoCongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TiepTan\QuanLiLaoCongForm.Designer.cs">
+      <DependentUpon>QuanLiLaoCongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLi\QuanLiNhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLi\QuanLiNhanVienForm.Designer.cs">
       <DependentUpon>QuanLiNhanVienForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report.cs">
+    <Compile Include="QuanLi\Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report.Designer.cs">
+    <Compile Include="QuanLi\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThayDoiNhanVien.cs">
+    <Compile Include="QuanLi\ThayDoiNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThayDoiNhanVien.Designer.cs">
+    <Compile Include="QuanLi\ThayDoiNhanVien.Designer.cs">
       <DependentUpon>ThayDoiNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="TiepTanForm.cs">
+    <Compile Include="TiepTan\TiepTanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TiepTanForm.Designer.cs">
+    <Compile Include="TiepTan\TiepTanForm.Designer.cs">
       <DependentUpon>TiepTanForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateCaLam.cs">
+    <Compile Include="QuanLi\UpdateCaLam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateCaLam.Designer.cs">
+    <Compile Include="QuanLi\UpdateCaLam.Designer.cs">
       <DependentUpon>UpdateCaLam.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateDeleteNhanVienForm.cs">
+    <Compile Include="QuanLi\UpdateDeleteNhanVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateDeleteNhanVienForm.Designer.cs">
+    <Compile Include="QuanLi\UpdateDeleteNhanVienForm.Designer.cs">
       <DependentUpon>UpdateDeleteNhanVienForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BangPhanCong.resx">
+    <Compile Include="Phong\TimPhongTrongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phong\TimPhongTrongForm.Designer.cs">
+      <DependentUpon>TimPhongTrongForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Phong\DatPhongForm.resx">
+      <DependentUpon>DatPhongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phong\DSPhongForm.resx">
+      <DependentUpon>DSPhongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phong\GiaPhongForm.resx">
+      <DependentUpon>GiaPhongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phong\SuaGiaPhongForm.resx">
+      <DependentUpon>SuaGiaPhongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phong\QuanLiPhongDaDatForm.resx">
+      <DependentUpon>QuanLiPhongDaDatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phong\QuanLiPhongForm.resx">
+      <DependentUpon>QuanLiPhongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLi\BangPhanCong.resx">
       <DependentUpon>BangPhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddNhanVienForm.resx">
+    <EmbeddedResource Include="QuanLi\AddNhanVienForm.resx">
       <DependentUpon>AddNhanVienForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -168,23 +259,32 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuanLiNhanVienForm.resx">
+    <EmbeddedResource Include="Phong\SuaVaXoaPhongDaDatForm.resx">
+      <DependentUpon>SuaVaXoaPhongDaDatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiepTan\QuanLiLaoCongForm.resx">
+      <DependentUpon>QuanLiLaoCongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLi\QuanLiNhanVienForm.resx">
       <DependentUpon>QuanLiNhanVienForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report.resx">
+    <EmbeddedResource Include="QuanLi\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThayDoiNhanVien.resx">
+    <EmbeddedResource Include="QuanLi\ThayDoiNhanVien.resx">
       <DependentUpon>ThayDoiNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TiepTanForm.resx">
+    <EmbeddedResource Include="TiepTan\TiepTanForm.resx">
       <DependentUpon>TiepTanForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateCaLam.resx">
+    <EmbeddedResource Include="QuanLi\UpdateCaLam.resx">
       <DependentUpon>UpdateCaLam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateDeleteNhanVienForm.resx">
+    <EmbeddedResource Include="QuanLi\UpdateDeleteNhanVienForm.resx">
       <DependentUpon>UpdateDeleteNhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phong\TimPhongTrongForm.resx">
+      <DependentUpon>TimPhongTrongForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DoAnCuoiKiDataSet.xsc">
       <DependentUpon>DoAnCuoiKiDataSet.xsd</DependentUpon>
@@ -230,6 +330,39 @@
     <None Include="DoAnCuoiKiDataSet4.xss">
       <DependentUpon>DoAnCuoiKiDataSet4.xsd</DependentUpon>
     </None>
+    <None Include="DoAnCuoiKiDataSetDSPhong.xsc">
+      <DependentUpon>DoAnCuoiKiDataSetDSPhong.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSetDSPhong.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoAnCuoiKiDataSetDSPhong.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoAnCuoiKiDataSetDSPhong.xss">
+      <DependentUpon>DoAnCuoiKiDataSetDSPhong.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSetGiaPhong.xsc">
+      <DependentUpon>DoAnCuoiKiDataSetGiaPhong.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSetGiaPhong.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoAnCuoiKiDataSetGiaPhong.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoAnCuoiKiDataSetGiaPhong.xss">
+      <DependentUpon>DoAnCuoiKiDataSetGiaPhong.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSetQLLC.xsc">
+      <DependentUpon>DoAnCuoiKiDataSetQLLC.xsd</DependentUpon>
+    </None>
+    <None Include="DoAnCuoiKiDataSetQLLC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoAnCuoiKiDataSetQLLC.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoAnCuoiKiDataSetQLLC.xss">
+      <DependentUpon>DoAnCuoiKiDataSetQLLC.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -250,6 +383,9 @@
     <Content Include="pictu\addnv..ico" />
     <Content Include="pictu\nam.jpg" />
     <Content Include="pictu\nu.jpg" />
+    <Content Include="pictu\phong_doi.jpg" />
+    <Content Include="pictu\phong_don.jpg" />
+    <Content Include="pictu\phong_gia_dinh.jpg" />
     <Content Include="pictu\wc1.gif" />
     <Content Include="pictu\wc2.gif" />
   </ItemGroup>

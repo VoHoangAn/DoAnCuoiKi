@@ -32,6 +32,7 @@ namespace DoAn
         {
             AddTextBox(dataGridView1.CurrentRow.Cells[0].Value.ToString());
         }
+
         private void AddTextBox(string id)
         {
             idTextBox.Text = id.ToString();
@@ -149,7 +150,8 @@ namespace DoAn
         }
         bool verif()
         {
-            if ((tenTextBox.Text.Trim() == "") || (dcTextBox.Text.Trim() == "") || idTextBox.Text.Trim() == "" || cvComboBox.Text.Trim() == "" || pictureBox1.Image == null)
+            if ((tenTextBox.Text.Trim() == "") || (dcTextBox.Text.Trim() == "") || idTextBox.Text.Trim() == "" || cvComboBox.Text.Trim() == "" 
+                || pictureBox1.Image == null)
             {
                 return false;
             }
@@ -159,6 +161,7 @@ namespace DoAn
             }
 
         }
+
         private void LoadData(SqlCommand cmd)
         {
 

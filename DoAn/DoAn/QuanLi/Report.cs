@@ -40,6 +40,7 @@ namespace DoAn
             adp.Fill(tab);
             return tab;
         }
+
         private void LoadData(string text)
         {
             if (text != "System.Data.DataRowView")
@@ -59,6 +60,7 @@ namespace DoAn
         {
             LoadData(comboBox1.SelectedValue.ToString());
         }
+
         private void printButton_Click(object sender, EventArgs e)
         {
             PrintDialog printDlg = new PrintDialog();
