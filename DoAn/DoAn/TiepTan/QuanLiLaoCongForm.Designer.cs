@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.datagvQuanLiLaoCong = new System.Windows.Forms.DataGridView();
+            this.quanLiLaoCongBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doAnCuoiKiDataSetQLLC = new DoAn.DoAnCuoiKiDataSetQLLC();
             this.cbbChooseIDToCheckInOut = new System.Windows.Forms.ComboBox();
             this.lblCheckInOut = new System.Windows.Forms.Label();
             this.btnCheckIn = new System.Windows.Forms.Button();
@@ -38,15 +40,10 @@
             this.tbHoTenTuongUngIDChoose = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.lblHoTen = new System.Windows.Forms.Label();
-            this.doAnCuoiKiDataSetQLLC = new DoAn.DoAnCuoiKiDataSetQLLC();
-            this.quanLiLaoCongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLiLaoCongTableAdapter = new DoAn.DoAnCuoiKiDataSetQLLCTableAdapters.QuanLiLaoCongTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.datagvQuanLiLaoCong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetQLLC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLiLaoCongBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetQLLC)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,18 +60,22 @@
             // 
             this.datagvQuanLiLaoCong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.datagvQuanLiLaoCong.AutoGenerateColumns = false;
             this.datagvQuanLiLaoCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagvQuanLiLaoCong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.datagvQuanLiLaoCong.DataSource = this.quanLiLaoCongBindingSource;
             this.datagvQuanLiLaoCong.Location = new System.Drawing.Point(65, 72);
             this.datagvQuanLiLaoCong.Name = "datagvQuanLiLaoCong";
             this.datagvQuanLiLaoCong.Size = new System.Drawing.Size(459, 318);
             this.datagvQuanLiLaoCong.TabIndex = 2;
             this.datagvQuanLiLaoCong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagvQuanLiLaoCong_CellClick);
+            // 
+            // quanLiLaoCongBindingSource
+            // 
+            this.quanLiLaoCongBindingSource.DataMember = "QuanLiLaoCong";
+            this.quanLiLaoCongBindingSource.DataSource = this.doAnCuoiKiDataSetQLLC;
+            // 
+            // doAnCuoiKiDataSetQLLC
+            // 
+            this.doAnCuoiKiDataSetQLLC.DataSetName = "DoAnCuoiKiDataSetQLLC";
+            this.doAnCuoiKiDataSetQLLC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbbChooseIDToCheckInOut
             // 
@@ -97,22 +98,26 @@
             // 
             // btnCheckIn
             // 
+            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCheckIn.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCheckIn.Location = new System.Drawing.Point(378, 470);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(88, 44);
             this.btnCheckIn.TabIndex = 5;
             this.btnCheckIn.Text = "Check in";
-            this.btnCheckIn.UseVisualStyleBackColor = true;
+            this.btnCheckIn.UseVisualStyleBackColor = false;
             this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
             // 
             // btnCheckOut
             // 
+            this.btnCheckOut.BackColor = System.Drawing.Color.Lime;
+            this.btnCheckOut.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCheckOut.Location = new System.Drawing.Point(119, 470);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(91, 44);
             this.btnCheckOut.TabIndex = 6;
             this.btnCheckOut.Text = "Check out";
-            this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.UseVisualStyleBackColor = false;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // tbHoTenTuongUngIDChoose
@@ -142,43 +147,15 @@
             this.lblHoTen.TabIndex = 9;
             this.lblHoTen.Text = "Ho Ten:";
             // 
-            // doAnCuoiKiDataSetQLLC
-            // 
-            this.doAnCuoiKiDataSetQLLC.DataSetName = "DoAnCuoiKiDataSetQLLC";
-            this.doAnCuoiKiDataSetQLLC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // quanLiLaoCongBindingSource
-            // 
-            this.quanLiLaoCongBindingSource.DataMember = "QuanLiLaoCong";
-            this.quanLiLaoCongBindingSource.DataSource = this.doAnCuoiKiDataSetQLLC;
-            // 
             // quanLiLaoCongTableAdapter
             // 
             this.quanLiLaoCongTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "HoTen";
-            this.dataGridViewTextBoxColumn2.HeaderText = "HoTen";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ThoiGianLamViec";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ThoiGianLamViec";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // QuanLiLaoCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(597, 526);
             this.Controls.Add(this.lblHoTen);
             this.Controls.Add(this.lblID);
@@ -193,8 +170,8 @@
             this.Text = "QuanLiLaoCong";
             this.Load += new System.EventHandler(this.QuanLiLaoCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagvQuanLiLaoCong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetQLLC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLiLaoCongBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doAnCuoiKiDataSetQLLC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,9 +193,6 @@
         private DoAnCuoiKiDataSetQLLC doAnCuoiKiDataSetQLLC;
         private System.Windows.Forms.BindingSource quanLiLaoCongBindingSource;
         private DoAnCuoiKiDataSetQLLCTableAdapters.QuanLiLaoCongTableAdapter quanLiLaoCongTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         //  private System.Windows.Forms.BindingSource quanLiLaoCongBindingSource1;
         //private DoAnCuoiKiDataSet2TableAdapters.QuanLiLaoCongTableAdapter quanLiLaoCongTableAdapter1;
     }

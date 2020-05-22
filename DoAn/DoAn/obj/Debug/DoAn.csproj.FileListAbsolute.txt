@@ -53,3 +53,4 @@ C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.SuaGiaPhongForm.r
 C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.DatPhongForm.resources
 C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.SuaVaXoaPhongDaDatForm.resources
 C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.TimPhongTrongForm.resources
+C:\Users\USER\source\repos\DoAnCuoiKi\DoAn\DoAn\obj\Debug\DoAn.ThongKeTheoNgay.resources

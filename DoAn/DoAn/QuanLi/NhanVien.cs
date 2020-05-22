@@ -22,7 +22,7 @@ namespace DoAn
             adp.Fill(table);
             return table;
         }
-        public bool InsertNhanVien(int MaNV, string ho, string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, int LuongCB, 
+        public bool InsertNhanVien(int MaNV, string ho, string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, int LuongCB,
             MemoryStream pic)
         {
             pc.InsertFromNhanVienToBangPhanCong(MaNV, Ten, ChucVu);
@@ -51,7 +51,6 @@ namespace DoAn
                 mydb.closeConnection();
                 return false;
             }
-
         }
 
         public bool EditNhanVien(int MaNV, string ho, string Ten, string GioiTinh, DateTime NSinh, string DChi, string ChucVu, MemoryStream pic)
@@ -132,7 +131,7 @@ namespace DoAn
                 cmd2.Parameters.Add("@them", SqlDbType.Int).Value = 0;
                 cmd2.Parameters.Add("@thieu", SqlDbType.Int).Value = 0;
             }
-            SqlCommand cmd3 = new SqlCommand("UPDATE NhanVien SET LuongThang-@lt WHERE MaNv = @id");
+            SqlCommand cmd3 = new SqlCommand("UPDATE NhanVien SET LuongThang=@lt WHERE MaNv = @id");
             cmd3.Parameters.Add("@lt", SqlDbType.Int).Value = Convert.ToInt32(tab.Rows[0]["LuongThang"]) + Globals.LuongNgay;
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1 || cmd2.ExecuteNonQuery() == 1)
@@ -150,32 +149,52 @@ namespace DoAn
 
 
 
-        //Xu li Log cua An
+        //Log của An
         public bool CheckInAndSaveToLog(int maNV, string hoTen, string chucVu)
         {
             string ngayHomNay = DateTime.Now.ToShortDateString();
-       
             string checkInTime = DateTime.Now.ToShortTimeString();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Log (MaNV, Ten, ChucVu, Ngay, Checkin) VALUES " +
-                "(@manv, @hoten, @chucvu, @ngay, @checkin)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Log (MaNV, HoTen, ChucVu, NgayLamViec, Checkin) " +
+                "VALUES (@manv, @hoten, @chucvu, @ngaylamviec, @checkin)", mydb.getConnection);
             cmd.Parameters.Add("@manv", SqlDbType.Int).Value = maNV;
-            cmd.Parameters.Add("@hoten", SqlDbType.Text).Value = hoTen;
-            cmd.Parameters.Add("@chucvu", SqlDbType.NChar).Value = chucVu;
-            cmd.Parameters.Add("@ngay", SqlDbType.Date).Value = ngayHomNay;
-            cmd.Parameters.Add("@checkin", SqlDbType.Text).Value = checkInTime;
-           
+            cmd.Parameters.Add("@hoten", SqlDbType.NVarChar).Value = hoTen;
+            cmd.Parameters.Add("@chucvu", SqlDbType.NVarChar).Value = chucVu;
+            cmd.Parameters.Add("@ngaylamviec", SqlDbType.Date).Value = ngayHomNay;
+            cmd.Parameters.Add("@checkin", SqlDbType.NChar).Value = checkInTime;
 
-            mydb.openConnection();
-
-            if (cmd.ExecuteNonQuery() == 1)
+            if (!KiemTraDaTonTai(maNV, ngayHomNay))
             {
-                return true;
+                if (InsertIntoLuongNV(maNV, hoTen, chucVu, ngayHomNay))
+                {
+                    mydb.openConnection();
+
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        mydb.closeConnection();
+                        return false;
+                    }
+                }
+
+                return false;
             }
             else
             {
-                mydb.closeConnection();
-                return false;
+                mydb.openConnection();
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    mydb.closeConnection();
+                    return false;
+                }
             }
         }
 
@@ -190,53 +209,40 @@ namespace DoAn
             adapter.Fill(dataTable);
 
             return dataTable;
-
         }
-        public bool CheckOutAndSaveLog(int maNV)
+        public bool CheckOutAndSaveToLog(int maNV)
         {
-            DataTable dataTable = GetTableFromLogByMaNV(maNV);
+            DataTable tableChuaLogMSNVCanTim = GetTableFromLogByMaNV(maNV);
 
-            //Tìm dòng trong table có checkin nhưng chưa checkout để điền vào
-            int dongCanTimDeCheckOut = 0;
-            for (int i = 0; i < dataTable.Rows.Count; i++)
+            int logID = 0;
+            string timeCheckIn = "0";
+
+            //Tìm dòng trong table có checkin nhưng chưa checkout để lấy checkin và logid của dòng đó
+            for (int i = 0; i < tableChuaLogMSNVCanTim.Rows.Count; i++)
             {
-                string checkOutInRowHasSameMaNV = dataTable.Rows[i].Field<string>("Checkout");
-                int id = Convert.ToInt32(dataTable.Rows[i].Field<Int32>("MaNV"));
+                string checkOutInRowHasSameMaNV = tableChuaLogMSNVCanTim.Rows[i].Field<string>("Checkout");
 
-                if (checkOutInRowHasSameMaNV == null && id == maNV)
+                if (checkOutInRowHasSameMaNV == null)
                 {
-                    dongCanTimDeCheckOut = i;
+                    logID = tableChuaLogMSNVCanTim.Rows[i].Field<int>("LogID");
+                    timeCheckIn = tableChuaLogMSNVCanTim.Rows[i].Field<string>("Checkin");
                     break;
                 }
             }
-            string timeCheckIn = dataTable.Rows[dongCanTimDeCheckOut].Field<string>("Checkin");
-            string dateCheckIn = dataTable.Rows[dongCanTimDeCheckOut].Field<DateTime>("Ngay").ToShortDateString();
 
-            string stringThoiGianCheckIn = dateCheckIn + " " + timeCheckIn;
-
-            DateTime thoiGianCheckIn = DateTime.ParseExact(stringThoiGianCheckIn, "dd/MM/yyyy HH:mm",
+            DateTime thoiGianCheckIn = DateTime.ParseExact(timeCheckIn, "HH:mm",
                 CultureInfo.InvariantCulture);
 
             DateTime thoiGianHienTai = DateTime.Now;
-            int thoiGianLamViec = (int)(thoiGianHienTai - thoiGianCheckIn).TotalHours;
+            int thoiGianLamViec = (int)(thoiGianHienTai - thoiGianCheckIn).TotalMinutes;
 
-            int thoiGianLamThem = 0;
-            int thoiGianLamThieu = 0;
+            SqlCommand cmd = new SqlCommand("UPDATE Log SET Checkout=@checkout, ThoiGianLamViec=@thoigianlamviec " +
+                "WHERE LogID=@logid", mydb.getConnection);
 
-            if (thoiGianLamViec <= 7)
-                thoiGianLamThieu = 8 - thoiGianLamViec;
-            else
-                thoiGianLamThem = thoiGianLamViec - 8;
-
-            SqlCommand cmd = new SqlCommand("UPDATE Log SET Checkout=@checkout, ThoiGianLam=@thoigianlam, Them=@thoiGianLamThem, " +
-                "Thieu=@thoiGianLamThieu WHERE MaNV=@manv AND CONVERT(VARCHAR,Checkin)=@checkin", mydb.getConnection);
-
-            cmd.Parameters.Add("@checkout", SqlDbType.Text).Value = thoiGianHienTai.ToShortTimeString();
-            cmd.Parameters.Add("@thoigianlam", SqlDbType.Int).Value = thoiGianLamViec;
-            cmd.Parameters.Add("@manv", SqlDbType.Int).Value = maNV;
-            cmd.Parameters.Add("@thoiGianLamThem", SqlDbType.Int).Value = thoiGianLamThem;
-            cmd.Parameters.Add("@thoiGianLamThieu", SqlDbType.Int).Value = thoiGianLamThieu;
+            cmd.Parameters.Add("@checkout", SqlDbType.NChar).Value = thoiGianHienTai.ToShortTimeString();
+            cmd.Parameters.Add("@thoigianlamviec", SqlDbType.Int).Value = thoiGianLamViec;
             cmd.Parameters.Add("@checkin", SqlDbType.VarChar).Value = timeCheckIn;
+            cmd.Parameters.Add("@logid", SqlDbType.Int).Value = logID;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -250,17 +256,165 @@ namespace DoAn
             }
         }
 
-        //DataTable QuanLiLaoCong
+        //Table LuongNV
+        public bool InsertIntoLuongNV(int maNV, string hoTen, string chucVu, string ngayLamViec)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO LuongNV (MaNV, HoTen, ChucVu, NgayLamViec) " +
+                "VALUES (@manv, @hoten, @chucvu, @ngaylamviec)", mydb.getConnection);
+            cmd.Parameters.Add("@manv", SqlDbType.Int).Value = maNV;
+            cmd.Parameters.Add("@hoten", SqlDbType.NVarChar).Value = hoTen;
+            cmd.Parameters.Add("@chucvu", SqlDbType.NVarChar).Value = chucVu;
+            cmd.Parameters.Add("@ngaylamviec", SqlDbType.Date).Value = ngayLamViec;
+
+            mydb.openConnection();
+
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        public bool KiemTraDaTonTai(int maNV, string ngayLamViec)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM LuongNV " +
+                "WHERE MaNV=@manv AND NgayLamViec=@ngaylamviec", mydb.getConnection);
+            cmd.Parameters.Add("@manv", SqlDbType.Int).Value = maNV;
+            cmd.Parameters.Add("@ngaylamviec", SqlDbType.Date).Value = ngayLamViec;
+
+            mydb.openConnection();
+            int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+
+            if (count > 0)
+                return true;
+            else
+                return false;
+        }
+        public void UpdateToanBoLuongNV(string ngayCanTinh)
+        {
+            DataTable dsNV = DSNVCanTinhLuong(ngayCanTinh);
+
+            string chucVu= dsNV.Rows[0].Field<string>("ChucVu");
+
+            foreach (DataRow row in dsNV.Rows)
+            {
+                int maNV = row.Field<int>("MaNV");
+                string ngayLamViec = row.Field<DateTime>("NgayLamViec").ToShortDateString();
+
+                UpdateLuong1NV(maNV, ngayLamViec, chucVu);
+            }
+
+        }
+        public bool UpdateLuong1NV(int maNV, string ngayLamViec, string chucVu)
+        {
+            int luong = 0;
+            int thoiGianLamViec = TinhThoiGianLamViecTrong1Ngay(maNV, ngayLamViec);
+            int lamThem = 0;
+            int lamThieu = 0;
+
+            if (chucVu == "Tiếp tân")
+                luong = 60000;
+            else
+                luong = 40000;
+
+            if (thoiGianLamViec > 8)
+                lamThem = thoiGianLamViec - 8;
+            else if (thoiGianLamViec == 8)
+                lamThem = lamThieu = 0;
+            else
+                lamThieu = 8 - thoiGianLamViec;
+
+            if (lamThem > 0)
+                luong += luong * 8 + 2 * luong * lamThem;
+            else if (lamThieu > 0)
+                luong += luong * thoiGianLamViec - 2 * luong * lamThieu;
+            else
+                luong += luong * 8;
+
+            SqlCommand cmd = new SqlCommand("UPDATE LuongNV SET ThoiGianLamViec=@thoigianlamviec, " +
+                "LamThem=@lamthem, LamThieu=@lamthieu, Luong=@luong " +
+                "WHERE MaNV=@manv AND NgayLamViec=@ngaylamviec", mydb.getConnection);
+
+            cmd.Parameters.Add("@thoigianlamviec", SqlDbType.Int).Value = thoiGianLamViec;
+            cmd.Parameters.Add("@lamthem", SqlDbType.Int).Value = lamThem;
+            cmd.Parameters.Add("@lamthieu", SqlDbType.Int).Value = lamThieu;
+            cmd.Parameters.Add("@luong", SqlDbType.Int).Value = luong;
+            cmd.Parameters.Add("@manv", SqlDbType.Int).Value = maNV;
+            cmd.Parameters.Add("@ngaylamviec", SqlDbType.Date).Value = ngayLamViec;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        public int TinhThoiGianLamViecTrong1Ngay(int maNV, string ngayLamViec)
+        {
+            int thoiGianLamViec = 0;
+
+            SqlCommand cmd = new SqlCommand("SELECT ThoiGianLamViec FROM Log " +
+                "WHERE MaNV=@manv AND NgayLamViec=@ngaylamviec", mydb.getConnection);
+            cmd.Parameters.Add("@manv", SqlDbType.Int).Value = maNV;
+            cmd.Parameters.Add("@ngaylamviec", SqlDbType.Date).Value = ngayLamViec;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable tableLogTheoNgayVaMaNV = new DataTable();
+            adapter.Fill(tableLogTheoNgayVaMaNV);
+
+            foreach (DataRow row in tableLogTheoNgayVaMaNV.Rows)
+            {
+                thoiGianLamViec += row.Field<int>("ThoiGianLamViec");
+            }
+            thoiGianLamViec /= 60;
+
+            return thoiGianLamViec;
+        }
+        public DataTable DSNVCanTinhLuong(string ngayCanTinh)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT MaNV, ChucVu, NgayLamViec FROM LuongNV " +
+                "WHERE NgayLamViec=@ngaylamviec ", mydb.getConnection);
+            cmd.Parameters.Add("@ngaylamviec", SqlDbType.Date).Value = ngayCanTinh;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+
+            adapter.Fill(dataTable);
+
+            return dataTable;
+        }
+        public DataTable GetLuongNVTheoNgay(string ngay)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM LuongNV WHERE NgayLamViec=@ngay",
+                mydb.getConnection);
+            cmd.Parameters.Add("@ngay", SqlDbType.Date).Value = ngay;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+
+            adapter.Fill(dataTable);
+
+            return dataTable;
+        }
+
+        //Table QuanLiLaoCong
         public bool InsertIntoQuanLiLaoCong(int id, string hoTen)
         {
             string thoiGianLamViec = DateTime.Now.ToShortTimeString();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO QuanLiLaoCong (Id, HoTen, ThoiGianLamViec) " +
-                "VALUES (@id, @hoten, @thoigian)", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO QuanLiLaoCong (MaNV, HoTen, BatDauLamViec) " +
+                "VALUES (@manv, @hoten, @batdaulamviec)", mydb.getConnection);
 
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            cmd.Parameters.Add("@hoten", SqlDbType.NChar).Value = hoTen;
-            cmd.Parameters.Add("@thoigian", SqlDbType.NChar).Value = thoiGianLamViec;
+            cmd.Parameters.Add("@manv", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@hoten", SqlDbType.NVarChar).Value = hoTen;
+            cmd.Parameters.Add("@batdaulamviec", SqlDbType.Time).Value = thoiGianLamViec;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -275,8 +429,8 @@ namespace DoAn
         }
         public bool DeleteQuanLiLaoCong(int id)
         {
-            SqlCommand cmd = new SqlCommand("DELETE FROM QuanLiLaoCong WHERE Id=@id", mydb.getConnection);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            SqlCommand cmd = new SqlCommand("DELETE FROM QuanLiLaoCong WHERE MaNV=@manv", mydb.getConnection);
+            cmd.Parameters.Add("@manv", SqlDbType.Int).Value = id;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -289,6 +443,77 @@ namespace DoAn
                 return false;
             }
 
+        }
+
+        //Xuất dữ liệu
+        public void XuatLuongNVIntoFile(string ngayCanXuat)
+        {
+            String path = Environment.GetFolderPath
+                (Environment.SpecialFolder.Desktop) + @"\XuatLuong.txt";
+
+            DataTable dt = GetLuongNVTheoNgay(ngayCanXuat);
+            
+
+            int[] maxLengths = new int[dt.Columns.Count];
+
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                maxLengths[i] = dt.Columns[i].ColumnName.Length;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (!row.IsNull(i))
+                    {
+                        int length = row[i].ToString().Length;
+
+                        if (length > maxLengths[i])
+                        {
+                            maxLengths[i] = length;
+                        }
+                    }
+                }
+            }
+
+            using (StreamWriter sw = new StreamWriter(path, false))
+            {
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    sw.Write(dt.Columns[i].ColumnName.PadRight(maxLengths[i] + 5));
+                }
+
+                sw.WriteLine("----------------------------------------------------------------" +
+                    "------------------------------------------------");
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    for (int i = 0; i < dt.Columns.Count; i++)
+                    {
+                        if (!row.IsNull(i))
+                        {
+                            sw.Write(row[i].ToString().PadRight(maxLengths[i] + 5));
+                        }
+                        else
+                        {
+                            sw.Write(new string(' ', maxLengths[i] + 5));
+                        }
+                    }
+
+                    sw.WriteLine();
+                }
+
+                sw.Close();
+            }
+        }
+        public DataTable LayTableThongKeTheoNgay(string ngay)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ThongKeThuChi", mydb.getConnection);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+
+            adapter.Fill(dataTable);
+
+            return dataTable;
         }
     }
 }

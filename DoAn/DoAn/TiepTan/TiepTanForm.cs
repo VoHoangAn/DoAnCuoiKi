@@ -25,24 +25,11 @@ namespace DoAn
             quanLiLaoCong.Show();
         }
 
-        private void tsmenuDangXuat_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Ban co chac muon dang xuat?", "Dang xuat", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Asterisk) == DialogResult.Yes)
-            {
-                NhanVien nv = new NhanVien();
-
-                nv.CheckOutAndSaveLog(Globals.ID);
-
-                Close();
-            }
-        }
-
         private void TiepTanForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             base.OnClosing(e);
 
-            if (MessageBox.Show("Ban co chac muon dang xuat?", "Dang xuat", MessageBoxButtons.YesNo,
+            if (MessageBox.Show("Bạn có chắc muốn đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo,
                MessageBoxIcon.Asterisk) == DialogResult.No)
             {
                 
@@ -52,7 +39,7 @@ namespace DoAn
             {
                 NhanVien nv = new NhanVien();
 
-                nv.CheckOutAndSaveLog(Globals.ID);
+                nv.CheckOutAndSaveToLog(Globals.ID);
             }
         }
 
@@ -78,6 +65,14 @@ namespace DoAn
             timPhongTrongForm.StartPosition = FormStartPosition.CenterScreen;
 
             timPhongTrongForm.Show();
+        }
+
+        private void tsmenuThongKeTheoNgay_Click(object sender, EventArgs e)
+        {
+            ThongKeTheoNgay thongKeTheoNgay = new ThongKeTheoNgay();
+            thongKeTheoNgay.StartPosition = FormStartPosition.CenterScreen;
+
+            thongKeTheoNgay.Show();
         }
     }
 }

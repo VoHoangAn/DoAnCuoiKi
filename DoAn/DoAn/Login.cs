@@ -37,10 +37,13 @@ namespace DoAn
             {
                 string a = "Quan Li";
                 cvForm = new MainForm();
-                if(tieptanButton.Checked)
+                cvForm.StartPosition = FormStartPosition.CenterScreen;
+
+                if (tieptanButton.Checked)
                 {
                     a = "Tiep tan";
                     cvForm = new TiepTanForm();
+                    cvForm.StartPosition = FormStartPosition.CenterScreen;
                 }
                 int userid = Convert.ToInt16(table.Rows[0]["ID"].ToString());
                 Globals.SetID(userid);

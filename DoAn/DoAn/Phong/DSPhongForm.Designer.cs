@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.soPhongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loaiPhongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hinhAnhDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.dSPhongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doAnCuoiKiDataSetDSPhong = new DoAn.DoAnCuoiKiDataSetDSPhong();
             this.dSPhongTableAdapter = new DoAn.DoAnCuoiKiDataSetDSPhongTableAdapters.DSPhongTableAdapter();
@@ -62,36 +59,12 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.soPhongDataGridViewTextBoxColumn,
-            this.loaiPhongDataGridViewTextBoxColumn,
-            this.hinhAnhDataGridViewImageColumn});
-            this.dataGridView1.DataSource = this.dSPhongBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 169);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(740, 497);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // soPhongDataGridViewTextBoxColumn
-            // 
-            this.soPhongDataGridViewTextBoxColumn.DataPropertyName = "SoPhong";
-            this.soPhongDataGridViewTextBoxColumn.HeaderText = "SoPhong";
-            this.soPhongDataGridViewTextBoxColumn.Name = "soPhongDataGridViewTextBoxColumn";
-            // 
-            // loaiPhongDataGridViewTextBoxColumn
-            // 
-            this.loaiPhongDataGridViewTextBoxColumn.DataPropertyName = "LoaiPhong";
-            this.loaiPhongDataGridViewTextBoxColumn.HeaderText = "LoaiPhong";
-            this.loaiPhongDataGridViewTextBoxColumn.Name = "loaiPhongDataGridViewTextBoxColumn";
-            // 
-            // hinhAnhDataGridViewImageColumn
-            // 
-            this.hinhAnhDataGridViewImageColumn.DataPropertyName = "HinhAnh";
-            this.hinhAnhDataGridViewImageColumn.HeaderText = "HinhAnh";
-            this.hinhAnhDataGridViewImageColumn.Name = "hinhAnhDataGridViewImageColumn";
             // 
             // dSPhongBindingSource
             // 
@@ -170,7 +143,6 @@
             this.cbbLoaiPhong.Name = "cbbLoaiPhong";
             this.cbbLoaiPhong.Size = new System.Drawing.Size(148, 21);
             this.cbbLoaiPhong.TabIndex = 7;
-//            this.cbbLoaiPhong.SelectedValueChanged += new System.EventHandler(this.cbbLoaiPhong_SelectedValueChanged);
             // 
             // btnXemGiaPhong
             // 
@@ -230,9 +202,6 @@
         private DoAnCuoiKiDataSetDSPhong doAnCuoiKiDataSetDSPhong;
         private System.Windows.Forms.BindingSource dSPhongBindingSource;
         private DoAnCuoiKiDataSetDSPhongTableAdapters.DSPhongTableAdapter dSPhongTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soPhongDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loaiPhongDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn hinhAnhDataGridViewImageColumn;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbSoPhong;

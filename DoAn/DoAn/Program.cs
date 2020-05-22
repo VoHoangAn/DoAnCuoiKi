@@ -16,16 +16,19 @@ namespace DoAn
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-            LoginForm log = new LoginForm();
-            if (log.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(log.cvForm);
-            }
-            else
-            {
-                Application.Exit();
-            }
+            Application.Run(new ThongKeTheoNgay());
+            //LoginForm log = new LoginForm();
+            //log.StartPosition = FormStartPosition.CenterScreen;
+
+            //if (log.ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(log.cvForm);
+            //}
+            //else
+            //{
+            //    Application.EnableVisualStyles();
+            //    Application.Exit();
+            //}
 
         }
     }

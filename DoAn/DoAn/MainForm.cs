@@ -59,5 +59,14 @@ namespace DoAn
             DateTime d = DateTime.Now;
             nv.UpdateLog(Globals.ID, d);
         }
+
+        private void tsmenuXuatLuong_Click(object sender, EventArgs e)
+        {
+            NhanVien nhanVien = new NhanVien();
+            string ngayHomNay = DateTime.Now.ToShortDateString();
+            //nhanVien.XuatLuongNVIntoFile(ngayHomNay);
+            nhanVien.UpdateToanBoLuongNV(ngayHomNay);
+            MessageBox.Show("Đã xuất lương ra file txt", "Xuất lương",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
     }
 }
